@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"!Silent"
+		]
+	},
+	"userpageeditprotection-desc": "Permite restringir a edição das páginas de usuário ao próprio usuário e aos editores permitidos",
+	"right-editalluserpages": "Editar todas as páginas de usuário",
+	"action-editalluserpages": "editar esta página de usuário"
+}

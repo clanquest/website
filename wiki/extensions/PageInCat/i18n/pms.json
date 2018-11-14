@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Borichèt",
+			"Dragonòt"
+		]
+	},
+	"pageincat-desc": "A gionta na funsion ëd l'analisator <code><nowiki>{{#incat:...}}</nowiki></code> për determiné se la pàgina corenta a l'é ant na categorìa spessificà",
+	"pageincat-wrong-warn": "'''Avis:''' {{PLURAL:$2|La categorìa $1 a l'é nen ëstàita|Le categorìe $1 a j'ero nen ëstàite}} andividuà për da bin da <code><nowiki>{{#incat:...}}</nowiki></code>, e com arzultà sta preuva a podrìa esse cioca. La version salvà ëd costa pàgina a dovrìa esse visualisà ant la manera giusta.",
+	"pageincat-very-wrong-warn": "'''Avis:''' {{PLURAL:$2|La categorìa $1 a l'é ne ëstàita|Le categorìe $1 a son nen ëstàite}} andividuà për da bin da <code><nowiki>{{#incat:...}}</nowiki></code>, e com arzultà costa previsualisassion a podrìa esse cioca. Sòn a peul esse causà da l'anclusion ëd le categorìe andrinta a l'istrussion <code><nowiki>{{#incat:...}}</nowiki></code>, e a peul arzulté an na visualisassion incoerenta."
+}

@@ -1,0 +1,50 @@
+@media all and (max-width: 800px) {
+	#wrap {
+		padding: 15px 5px 0 5px;
+	}
+
+	.width-container:not(.mobile-width-container) {
+		margin: 0;
+		min-width: 0;
+	}
+
+	p.time {
+		margin-bottom: 1.5em;
+	}
+
+	ul.topiclist dd.posts,
+	ul.topiclist dd.topics,
+	ul.topiclist dd.views,
+	ul.topiclist dd.extra,
+	ul.topiclist dd.mark,
+	ul.topiclist dd.lastpost {
+		display: none !important;
+	}
+
+	table.wikitable {
+		float: none !important;
+		margin: 0 0 2em 0 !important;
+		width: 100% !important;
+	}
+
+	#page-body .thumb {
+		float: none !important;
+		margin: 0 auto !important;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+
+	#page-body .box {
+		float: none !important;
+		margin: 0 auto !important;
+	}
+	.home-content .side-widgets { 
+		margin-top: 20px;
+	}
+	.cq-info-box { padding-top: 4px; }
+
+	.home-content, .main-content#hub #tweets {
+		flex-direction: column;
+	}
+}

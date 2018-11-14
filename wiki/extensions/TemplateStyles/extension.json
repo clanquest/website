@@ -1,0 +1,49 @@
+{
+	"name": "TemplateStyles",
+	"version": "0.9",
+	"author": [
+		"Marc A. Pelletier"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:TemplateStyles",
+	"namemsg": "templatestyles",
+	"descriptionmsg": "templatestyles-desc",
+	"license-name": "LGPL-2.0+",
+	"type": "other",
+	"manifest_version": 1,
+	"MessagesDirs": {
+		"TemplateStyles": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"TemplateStylesHooks": "TemplateStyles.hooks.php",
+		"CSSParser": "CSSParser.php",
+		"CSSRenderer": "CSSRenderer.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"TemplateStylesHooks::onParserFirstCallInit"
+		],
+		"OutputPageParserOutput": [
+			"TemplateStylesHooks::onOutputPageParserOutput"
+		]
+	},
+	"config": {
+		"TemplateStylesNamespaces": {
+			"10": true
+		},
+		"TemplateStylesFunctionWhitelist": {
+			"rgb": true
+		},
+		"TemplateStylesPropertyBlacklist": {
+			"url": true,
+			"behavior": true,
+			"-moz-binding": true,
+			"-o-link": true
+		}
+	},
+	"ConfigRegistry": {
+		"templatestyles": "GlobalVarConfig::newInstance"
+	}
+}
+

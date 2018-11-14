@@ -1,0 +1,20 @@
+{
+	"name": "mediawiki/user-functions",
+	"type": "mediawiki-extension",
+	"description": "Enhance parser with user functions",
+	"keywords": [
+		"MediaWiki",
+		"User"
+	],
+	"homepage": "https://www.mediawiki.org/wiki/Extension:UserFunctions",
+	"license": "GPL-2.0+",
+	"require": {
+		"php": ">=5.3.0",
+		"composer/installers": "1.*,>=1.0.1"
+	},
+	"autoload": {
+		"files": ["UserFunctions.php"],
+		"classmap": ["UserFunctions_body.php"]
+	}
+}
+

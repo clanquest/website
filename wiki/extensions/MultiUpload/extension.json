@@ -1,0 +1,108 @@
+{
+	"name": "MultiUpload",
+	"version": "3.2",
+	"author": [
+		"Travis Derouin",
+		"Lee Worden"
+	],
+	"license-name": "GPL-2.0+",
+	"url": "https://www.mediawiki.org/wiki/Extension:MultiUpload",
+	"descriptionmsg": "multiupload-desc",
+	"type": "specialpage",
+	"config": {
+		"MultiUploadInitialNumberOfImportRows": 1,
+		"MultiUploadTempDir": "/tmp"
+	},
+	"SpecialPages": {
+		"MultiUpload": "SpecialMultiUpload"
+	},
+	"MessagesDirs": {
+		"MultiUpload": [
+			"i18n"
+		]
+	},
+	"APIModules": {
+		"multiupload-unpack": "MultiUploadApiUnpack"
+	},
+	"ExtensionMessagesFiles": {
+		"MultiUploadAlias": "MultiUpload.alias.php"
+	},
+	"AutoloadClasses": {
+		"MultiUploadApiUnpack": "MultiUploadApi.php",
+		"SpecialMultiUpload": "SpecialMultiUpload.php",
+		"MultiUploadForm": "SpecialMultiUpload.php",
+		"FauxWebRequestUpload": "SpecialMultiUpload.php",
+		"DerivativeRequestWithFiles": "SpecialMultiUpload.php",
+		"UploadRow": "SpecialMultiUpload.php",
+		"UploadFormRow": "SpecialMultiUpload.php"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "MultiUpload/resources"
+	},
+	"ResourceModules": {
+		"special.upload.patched": {
+			"scripts": [
+				"mediawiki.special.upload.js.patched",
+				"upload.js.patched"
+			],
+			"messages": [
+				"widthheight",
+				"size-bytes",
+				"size-kilobytes",
+				"size-megabytes",
+				"size-gigabytes",
+				"largefileserver"
+			],
+			"dependencies": [
+				"mediawiki.libs.jpegmeta",
+				"mediawiki.api",
+				"mediawiki.Title",
+				"mediawiki.legacy.wikibits",
+				"mediawiki.util",
+				"jquery.spinner"
+			]
+		},
+		"ext.multiupload.top": {
+			"scripts": "ext.multiupload.top.js",
+			"styles": "ext.multiupload.top.css",
+			"position": "top"
+		},
+		"ext.multiupload.unpack": {
+			"scripts": [
+				"ext.multiupload.unpack.js",
+				"mw.FormDataTransport.js"
+			],
+			"dependencies": [
+				"jquery.client",
+				"mediawiki.api",
+				"ext.multiupload.top"
+			],
+			"messages": [
+				"multiupload-upload-package-error",
+				"multiupload-unpack-error",
+				"multiupload-http-error",
+				"multiupload-file-unpacked-from"
+			]
+		},
+		"ext.multiupload.shared": {
+			"scripts": "ext.multiupload.shared.js",
+			"styles": "ext.multiupload.shared.css",
+			"dependencies": [
+				"ext.multiupload.top",
+				"special.upload.patched"
+			],
+			"messages": [
+				"multiupload-row",
+				"multiupload-unpack-button"
+			]
+		},
+		"ext.multiupload": {
+			"scripts": "ext.multiupload.js",
+			"dependencies": [
+				"ext.multiupload.shared"
+			]
+		}
+	},
+	"manifest_version": 1
+}

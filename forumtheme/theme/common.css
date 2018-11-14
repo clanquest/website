@@ -1,0 +1,319 @@
+.width-container {
+	margin: 0 auto;
+	max-width: 1152px;
+}
+
+@media only screen and (max-width: 1220px),
+only screen and (max-device-width: 1220px) {
+	.width-container {
+		margin: 0 12px;
+	}
+}
+
+a { cursor: pointer; }
+
+.boon {
+	margin-bottom: 20px;
+	clear: both;
+}
+.boon .inner {
+	padding: 8px;
+}
+.boon .inner.xlist {
+	padding: 0px;
+}
+.boon h3 {
+	margin-top: 0;
+}
+.boon .stat-block:last-child p {
+	margin-bottom: 0;
+}
+.headerspace {
+	margin: 20px 0;
+}
+.action-bar {
+	margin: -5px 0 20px;
+}
+
+ul.navlinks {
+	border-top: none;
+}
+.breadcrumbs .crumb:before {
+	content: '»';
+	list-style: none;
+}
+li.breadcrumbs span:first-child > a {
+	padding-left: 4px;
+}
+#quick-links ul li:not(:first-child):before, #wiki-nav ul li:not(:first-child):before {
+	content: '| ';
+	margin: 0 4px;
+}
+#quick-links ul li, #wiki-nav ul li {
+	display: inline-block;
+}
+#quick-links ul li a, #wiki-nav ul li a {
+	display: inline-block;
+	height: 100%;
+}
+#quick-links .wiki-actions-dropdown {
+	min-width: 100px;
+	margin-top: -5px;
+}
+#quick-links .wiki-actions-dropdown li {
+	border: 0;
+	display: block;
+	text-align: right;
+	padding-right: 3px;
+}
+#quick-links .wiki-actions-dropdown li:before {
+	content: '' !important;
+	margin: 0 !important;
+}
+#quick-links .wiki-actions-dropdown li a {
+	border: 0;
+	display: block;
+}
+
+ul.topiclist li.header {
+	padding: 2px;
+}
+
+ul.topiclist li.header dl dt .list-inner {
+	padding-left: 6px;
+}
+
+ul.topiclist dl {
+	display: flex;
+	flex: 1;
+}
+
+ul.topiclist dt {
+	display: flex;
+	flex: 1;
+	margin-right: 0 !important;
+	width: inherit !important;
+}
+
+ul.topiclist dd {
+	display: flex;
+	flex: 0 0 100px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+ul.topiclist dd.redirect { flex: 0 0 250px; }
+
+ul.topiclist li.row dl { padding: 0; }
+ul.topiclist li.row dt { padding: 8px 0; }
+ul.topiclist dd.lastpost { flex: 0 0 250px; }
+
+ul.topiclist li.header dl dt .list-inner,
+ul.topiclist li.row dl dt .list-inner {
+	margin-right: 6px;
+}
+
+.stat-block {
+
+}
+
+.pagination {
+	float: right;
+	margin-top: 5px;
+}
+.action-bar.bottom .pagination {
+	margin-top: 5px;
+}
+.topic-tools {
+	float: left;
+	margin-top: 4px;
+}
+.topic-search {
+	float: right;
+	margin: -4px 0 0 5px;
+}
+#quickmod {
+	float: right;
+	margin-top: 4px;
+	margin-right: 5px;
+}
+.forum-jumpbox {
+	float: right;
+	margin-bottom: 20px;
+}
+.emoji {
+	max-height: 1.3em;
+	max-width: 1.3em;
+}
+
+body#wiki .toc {
+	display: table;
+	padding: 7px;
+}
+	body#wiki .toc ul {
+		margin-left: 2em;
+	}
+	body#wiki .toc ul ul {
+		margin-left: 1em;
+	}
+body#wiki #page-body .toctitle h2 {
+	border: none;
+	font-size: 1.5em;
+	margin-top: 0;
+}
+body#wiki .wikitable { margin: 0 0 2em 0; }
+body#wiki .wikitable th {
+	font-weight: 400;
+	padding: 5px;
+}
+body#wiki .wikitable td { padding: 5px; }
+body#wiki .mw-datatable { width: 100%; }
+body#wiki .listfiles_nav { margin: 0 auto 20px; }
+body#wiki .listfiles_nav td { text-align: center; }
+body#wiki #page-body {
+	font-size: 1.3em;
+}
+body#wiki #page-body h1 {
+	color: red;
+}
+	body#wiki #page-body h1:before {
+		content: "Don't use h1. Use h2 and higher instead.";
+	}
+body#wiki #page-body h2, .main-content h2 {
+	border-bottom: 1px solid #555;
+	color: #FFD47D;
+	font-size: 1.6em;
+	font-variant: small-caps;
+	overflow: hidden; /* prevents the border from going behind info-boxes */
+}
+body#wiki #page-body h3 {
+	color: #FFD47D;
+	font-size: 1.4em;
+	font-variant: small-caps;
+	text-transform: none;
+}
+body#wiki #page-body h4 {
+	color: #FFD47D;
+	font-size: 1.3em;
+	font-variant: small-caps;
+	text-transform: none;
+}
+body#wiki #page-body p {
+	font-size: 1.0em;
+	line-height: 1.6em;
+}
+body#wiki #page-body ul, body#wiki #page-body ol {
+	margin-left: 1.5em;
+}
+body#wiki fieldset {
+	margin: 1em 0 1em 0;
+	padding: 0 1em 1em;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+body#wiki #search-box fieldset {
+	padding: 0;
+	margin: 0;
+}
+body#wiki #preferences { padding: 8px; }
+body#wiki .mw-prefs-buttons { text-align: center; }
+body#wiki ul#preftoc { margin: 1em 0 0 0; }
+body#wiki ul#preftoc li {
+	display: inline-block;
+	margin-right: 1.1em;
+	border: 1px solid transparent;
+	border-radius: 4px 4px 0 0;
+	padding: 5px 9px;
+}
+body#wiki #page-body .box { margin-bottom: 10px; }
+body#wiki #page-body .column-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+body#wiki #page-body .column-container .column { flex-grow: 1; }
+body#wiki .catlinks { margin-top: 1em; }
+body#wiki .catlinks ul {
+	display: inline;
+	list-style: none;
+	margin-left: 0 !important;
+}
+	body#wiki .catlinks li:first-child {
+		padding-left: 0.25em;
+		border-left: 0;
+	}
+	body#wiki .catlinks li {
+		display: inline-block;
+		line-height: 1.25em;
+		margin: 0.125em 0;
+		padding: 0 0.5em;
+	}
+body#wiki .catlinks-allhidden {
+		display: none;
+}
+body#wiki .search-types ul li {
+	float: left;
+	list-style: none;
+	margin-right: 10px;
+}
+body#wiki .references li {
+	margin-left: 25px;
+}
+body#wiki .mw-allpages-chunk {
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
+}
+	body#wiki .mw-allpages-chunk li {
+		margin-left: 20px;
+	}
+body#wiki .gallery, body#wiki .mw-gallery-traditional, body#wiki .mw-category {
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
+	margin: 0;
+}
+	body#wiki .gallery li.gallerybox,
+	body#wiki .mw-gallery-traditional li.gallerybox,
+	body#wiki .mw-category .mw-category-group {
+		break-inside: avoid;
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+	}
+	body#wiki .gallery li.gallerybox,
+	body#wiki .mw-gallery-traditional li.gallerybox{
+		list-style-type: none;
+	}
+body#wiki .mw-editsection {
+	vertical-align: super;
+    font-size: 50%;
+}
+body#wiki #page-body .center {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+body#wiki #page-body .tright {
+	float: right;
+	margin-left: 10px;
+}
+body#wiki #page-body .tleft {
+	float: left;
+	margin-right: 10px;
+}
+body#wiki #page-body .tnone {
+	display: inline-block;
+}
+body#wiki #page-body .oo-ui-dropdownWidget-handle {
+    color: #fff !important;
+    background: #191919 !important;
+    border: 1px solid #333;
+}
+body#wiki #page-body .oo-ui-menuSelectWidget {
+	background: #191919;
+}
+body#wiki #page-body .oo-ui-dropdownInputWidget-php { border: 1px solid #333 !important; }
+sup.reference {
+	vertical-align: super;
+	font-size: 80%;
+}

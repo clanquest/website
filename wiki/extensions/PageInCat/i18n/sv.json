@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lokal Profil"
+		]
+	},
+	"pageincat-desc": "Lägger till en tolkfunktion <code><nowiki>{{#incat:...}}</nowiki></code> för att avgöra om den aktuella sidan ligger i en viss kategori",
+	"pageincat-wrong-warn": "'''Varning:''' {{PLURAL:$2|Kategorin $1|Kategorierna $1}} har inkorrekt identifierats av <code><nowiki>{{#incat:...}}</nowiki></code>, och som ett resultat kan denna förhandsvisning vara felaktig. Den sparade versionen av sidan bör visas på ett korrekt sätt.",
+	"pageincat-very-wrong-warn": "'''Varning:''' {{PLURAL:$2|Kategorin $1|Kategorierna $1}} har inkorrekt identifierats av <code><nowiki>{{#incat:...}}</nowiki></code>, och som ett resultat kan denna förhandsvisning vara felaktig. Detta kan orsakas av att kategorier inkluderas inuti <code><nowiki>{{#incat:...}}</nowiki></code>-påståenden, och kan leda till inkonsekvent visning."
+}

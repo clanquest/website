@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cainamarques"
+		]
+	},
+	"pageincat-desc": "Adiciona uma função sintática <code><nowiki>{{#incat:...}}</nowiki></code> para determinar se a página atual está inserida numa determinada categoria",
+	"pageincat-wrong-warn": "'''Atenção:''' {{PLURAL:$2|A categoria $1 foi detectada|As categorias $1 foram detectadas}} incorretamente pela função <code><nowiki>{{#incat:...}}</nowiki></code> e, como resultado, esta previsão pode estar incorreta. A versão salva desta página deverá ser exibida na forma correta.",
+	"pageincat-very-wrong-warn": "'''Atenção:''' {{PLURAL:$2|A categoria $1 foi detectada|As categorias $1 foram detectadas}} incorretamente pela função <code><nowiki>{{#incat:...}}</nowiki></code> e, como resultado, esta previsão pode estar incorreta. Isto pode ser causado pela inclusão de categorias na função <code><nowiki>{{#incat:...}}</nowiki></code> e pode resultar numa exibição inconsistente."
+}

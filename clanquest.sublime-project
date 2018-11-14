@@ -1,0 +1,22 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "/Users/Tom/dev/web/clanquest/instance/forums"
+		},
+		{
+			"path": "/Users/Tom/dev/web/clanquest/instance/wiki/skins/ClanQuest"
+		},
+		{
+			"path": "/Users/Tom/dev/web/clanquest/instance/wiki/skins/Vector"
+		}
+	],
+	"settings":
+	{
+		"tab_size": 2,
+		"translate_tabs_to_spaces": false
+	}
+}

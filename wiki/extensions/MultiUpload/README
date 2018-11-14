@@ -1,0 +1,37 @@
+== MultiUpload Extension ==
+
+This extension provides a customized interface to the features of
+Special:Upload, allowing wiki editors to upload multiple files in
+a single operation.
+
+=== Requirements ===
+
+* PHP 5.x
+* MediaWiki 1.27 or later
+
+=== Installation ===
+
+Download the extension from the links provided at 
+https://www.mediawiki.org/wiki/Extension:MultiUpload.  Install it in
+in your extensions directory.
+
+Add the line
+
+	wfLoadExtension( 'MultiUpload' );
+
+to your LocalSettings.php file.
+
+=== Configuration ===
+
+* $wgMultiUploadInitialNumberOfImportRows
+** The number of file-upload interfaces shown when a fresh MultiUpload page is opened.
+
+* $wgMultiUploadTempDir
+** The directory where tar and zip files will be unpacked, if they are to be unpacked before uploading.
+
+=== License ===
+
+ * @author Lee Worden (worden.lee@gmail.com)
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @homepage https://www.mediawiki.org/wiki/Extension:MultiUpload
+

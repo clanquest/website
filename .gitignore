@@ -1,0 +1,10 @@
+*.DS_Store
+
+*.sublime-workspace
+
+/wiki/LocalSettings.php
+/wiki/cache/*
+/wiki/vendor
+/wiki/composer.lock
+vendor
+wiki/images

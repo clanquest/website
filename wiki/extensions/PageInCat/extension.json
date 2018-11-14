@@ -1,0 +1,41 @@
+{
+	"name": "PageInCat",
+	"version": "3.0.0",
+	"author": "[https://mediawiki.org/wiki/User:Bawolff Brian Wolff]",
+	"license-name": "GPL-2.0+",
+	"url": "https://www.mediawiki.org/wiki/Extension:PageInCat",
+	"descriptionmsg": "pageincat-desc",
+	"type": "parserhook",
+	"MessagesDirs": {
+		"PageInCat": [
+			"i18n"
+		]
+	},
+	"config": {
+		"PageInCatUseAccuratePreview": true
+	},
+	"ExtensionMessagesFiles": {
+		"PageInCatMagic": "PageInCat.i18n.magic.php"
+	},
+	"AutoloadClasses": {
+		"PageInCat": "PageInCat_body.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"PageInCat::register"
+		],
+		"ParserClearState": [
+			"PageInCat::onClearState"
+		],
+		"ParserAfterTidy": [
+			"PageInCat::onParserAfterTidy"
+		],
+		"EditPageGetPreviewContent": [
+			"PageInCat::onEditPageGetPreviewContent"
+		],
+		"ParserBeforeInternalParse": [
+			"PageInCat::onParserBeforeInternalParse"
+		]
+	},
+	"manifest_version": 1
+}

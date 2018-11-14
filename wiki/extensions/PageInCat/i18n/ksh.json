@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"pageincat-desc": "Brängk de Funxjuhn <code lang=\"en\"><nowiki>{{#incat:…}}</nowiki></code> en et Wiki, di eruß fenge kann, of en Sigg en ene beschtemmpte Saachjrobb_es.",
+	"pageincat-wrong-warn": "'''Opjepaß:''' De {{PLURAL:$2|Saachjropp $1 wood|Saachjroppe $1 woodte|-}} nit reeschtesch äkannt vun <code><nowiki>{{#incat:...}}</nowiki></code>, un dröm es heh di Vörschau velleisch verkiehrt. Eets ens afjescheischert sullt di Sigg ävver reeschtesch aanjezeisch wääde.",
+	"pageincat-very-wrong-warn": "'''Opjepaß:''' De {{PLURAL:$2|Saachjropp $1 wood|Saachjroppe $1 woodte|-}} nit reeschtesch äkannt vun <code><nowiki>{{#incat:...}}</nowiki></code>, un dröm es heh di Vörschau velleisch verkiehrt. Dat künnt dervon kumme, dat Saachjroppe en <code><nowiki>{{#incat:...}}</nowiki></code> enjeschloße sin un määt, dat di Sigg nit einheitlesch aanjezeisch wääde künnt."
+}

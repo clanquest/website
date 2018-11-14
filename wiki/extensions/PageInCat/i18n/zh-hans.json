@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yfdyh000",
+			"Liuxinyu970226"
+		]
+	},
+	"pageincat-desc": "添加一个解析器函数<code><nowiki>{{#incat:...}}</nowiki></code>确定当前页面是否在指定的分类里",
+	"pageincat-wrong-warn": "'''警告：'''检测到{{PLURAL:$2|分类}}$1有错误的<code><nowiki>{{#incat:...}}</nowiki></code>，并且预览结果也会不正确。应以正确方式显示页面保存版本。",
+	"pageincat-very-wrong-warn": "'''警告：'''检测到{{PLURAL:$2|分类$1}}不当的<code><nowiki>{{#incat:...}}</nowiki></code>，并因此预览可能不正确。这可能导致包含分类<code><nowiki>{{#incat:...}}</nowiki></code>的语句不正确，并因此显示不正确。"
+}

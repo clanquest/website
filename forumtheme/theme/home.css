@@ -1,0 +1,143 @@
+.large-header {
+	padding-top: 48px;
+}
+.large-header h1.cq-master {
+	position: absolute;
+	text-indent: -9999em;
+}
+.large-header .main-logo {
+	display: block;
+	max-width: 100%;
+	margin: 5px auto 0 auto;
+}
+
+.large-header .header-links {
+	display: flex;
+	flex-direction: row;
+}
+
+.large-header .link {
+	color: white;
+	flex: 1 1 auto;
+	height: 160px;
+	font-size: 20px;
+	margin: 24px 8px;
+	position: relative;
+}
+
+.large-header .link .background-image, .large-header .link .content {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.large-header .link .background-image {
+	background-position: center center;
+	background-size: cover;
+}
+
+.large-header .link .content {
+	background-color: rgba(0, 0, 0, .3);
+	transition: background-color .1s ease-in-out;
+}
+
+.large-header .link .text {
+	bottom: 4px;
+	left: 0;
+	right: 0;
+	position: absolute;
+	font-variant: small-caps;
+	text-align: center;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.large-header .link:hover .content {
+	background-color: transparent;
+}
+
+.large-header .link.discord {
+	width: 400px;
+	flex-shrink: 0;
+	flex-grow: 0;
+}
+
+.large-header .link.discord iframe {
+	height: 500px;
+	width: 100%;
+}
+
+.home-content {
+	display: flex;
+	flex-direction: row;
+	min-height: 300px;
+}
+
+.home-content .main-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	font-size: 1.3em;
+}
+.home-content .main-content .news-footer { display: none; }
+
+.home-content .main-content .column {
+	flex: 0;
+	flex-basis: 50%;
+	padding-right: 16px;
+}
+
+.home-content ul.event-list {
+	list-style: none;
+}
+
+.home-content ul.event-list li {
+	font-size: 15px;
+	line-height: 1.5;
+	// height: 48px;
+	margin-bottom: 8px;
+}
+
+.home-content ul.event-list li .date {
+	color: rgba(255, 255, 255, .6);
+	font-size: 90%;
+	text-align: right;
+}
+
+.home-content .useful-links {
+	width: 200px;
+	flex: 0 1 200px;
+	font-size: 15px;
+	line-height: 1.5;
+}
+.home-content .side-widgets {
+	width: 350px;
+	flex: 0 0 350px;
+	line-height: 1.5;
+	margin: 0 8px;
+	height: 675px;
+}
+.home-content .google-calendar-embed {
+	border-width: 0;
+	flex: 1;
+	height: 300px;
+	width: 100%;
+}
+.home-content .discord-widget {
+	border-width: 0;
+	flex: 1;
+	height: 300px;
+	width: 100%;
+}
+.main-content ul {
+	margin-left: 1.5em;
+}
+.home-brochure {
+	font-size: 2em;
+	font-weight: 300;
+	padding: 0 1em;
+	text-align: center;
+}
+.home-brochure h2 { font-weight: 300; }
+.home-brochure img { max-width: 100%; }

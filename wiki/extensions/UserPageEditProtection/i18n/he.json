@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Guycn2",
+			"YaronSh"
+		]
+	},
+	"userpageeditprotection-desc": "הגבלת עריכת דפי משתמשים למשתמשים המשויכים אליהם ולעורכים מורשים",
+	"right-editalluserpages": "עריכת כל דפי המשתמש",
+	"action-editalluserpages": "לערוך את דף המשתמש הזה"
+}

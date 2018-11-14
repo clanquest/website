@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cainamarques",
+			"Hamilton Abreu"
+		]
+	},
+	"pageincat-desc": "Adiciona uma função sintática <code><nowiki>{{#incat:...}}</nowiki></code> para determinar se a página atual está inserida numa determinada categoria",
+	"pageincat-wrong-warn": "'''Atenção:''' {{PLURAL:$2|A categoria $1 foi detectada|As categorias $1 foram detectadas}} incorrectamente pela função <code><nowiki>{{#incat:...}}</nowiki></code> e, em resultado, esta antevisão pode estar incorrecta. A versão gravada da página deve ser apresentada correctamente.",
+	"pageincat-very-wrong-warn": "'''Atenção:''' {{PLURAL:$2|A categoria $1 foi detectada|As categorias $1 foram detectadas}} incorrectamente pela função <code><nowiki>{{#incat:...}}</nowiki></code> e, em resultado, esta antevisão pode estar incorrecta. Isto pode dever-se à inclusão de categorias na função <code><nowiki>{{#incat:...}}</nowiki></code> e pode resultar numa apresentação inconsistente."
+}

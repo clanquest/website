@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98",
+			"Siebrand"
+		]
+	},
+	"userpageeditprotection-desc": "Beperkt het bewerken van gebruikerspagina's tot de gebruiker zelf en gebruikers met rechten",
+	"right-editalluserpages": "Alle gebruikerspagina's bewerken",
+	"action-editalluserpages": "deze gebruikerspagina te bewerken"
+}

@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"pageincat-desc": "Aggiunge 'na funzione analizzatrice <code><nowiki>{{#incat:...}}</nowiki></code> pe deteminà ce 'a pàgene de mò stè jndr'à 'na categorije specifiche",
+	"pageincat-wrong-warn": "'''Attenziò:''' {{PLURAL:$2|'A categorije $1 ha state|le categorije $1 onne state}} acchiate ingorrette da <code><nowiki>{{#incat:...}}</nowiki></code>, e cumme 'nu resultate sta andeprime pò essere ingorrette. 'A versiona reggistrate de sta pàgene avessa essere fatte vedè jndr'à 'nu mode corrette.",
+	"pageincat-very-wrong-warn": "'''Attenziò:''' {{PLURAL:$2|'A categorije $1 ha state|le categorije $1 onne state}} acchiate ingorrette da <code><nowiki>{{#incat:...}}</nowiki></code>, e cumme 'nu resultate sta andeprime pò essere ingorrette. Stu fatte pò essere causate da categorije 'ngluse jndr'à frase <code><nowiki>{{#incat:...}}</nowiki></code>, e pò resultà jndr'à 'na visualizzazzione inconsistende."
+}

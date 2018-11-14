@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"EugeneZelenko",
+			"Red Winged Duck"
+		]
+	},
+	"userpageeditprotection-desc": "Дазваляе абмежаваць рэдагаваньне старонак удзельнікаў самім удзельнікам і асобнымі рэдактарамі",
+	"right-editalluserpages": "рэдагаваньне ўсіх старонак удзельнікаў",
+	"action-editalluserpages": "рэдагаваньне гэтай старонкі ўдзельніка"
+}

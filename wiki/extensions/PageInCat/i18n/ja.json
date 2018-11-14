@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"pageincat-desc": "現在のページが指定したカテゴリに属するか判定する、パーサー関数 <code><nowiki>{{#incat:...}}</nowiki></code> を追加する",
+	"pageincat-wrong-warn": "'''警告:''' {{PLURAL:$2|カテゴリ「$1」}}に関する <code><nowiki>{{#incat:...}}</nowiki></code> の判定は間違っており、そのためこのプレビューも間違っているおそれがあります。このページを保存した版は正しく表示されるはずです。",
+	"pageincat-very-wrong-warn": "'''警告:''' {{PLURAL:$2|カテゴリ「$1」}}に関する <code><nowiki>{{#incat:...}}</nowiki></code> の判定は間違っており、そのためこのプレビューも間違っているおそれがあります。これはカテゴリを <code><nowiki>{{#incat:...}}</nowiki></code> 文の中に含めると起こることがあり、表示が食い違ってしまうことがあります。"
+}

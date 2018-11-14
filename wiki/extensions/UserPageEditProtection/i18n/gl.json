@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Banjo"
+		]
+	},
+	"userpageeditprotection-desc": "Permite restrinxir a edición nas páxinas de usuario ó propio usuario e ós editores con permiso",
+	"right-editalluserpages": "Editar todas as páxinas de usuario",
+	"action-editalluserpages": "editar esta páxina de usuario"
+}

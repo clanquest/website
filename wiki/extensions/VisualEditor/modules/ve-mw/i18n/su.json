@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kandar",
+			"Uchup19"
+		]
+	},
+	"apihelp-visualeditor-description": "Balikkeun HTML5 pikeun kaca ti layanan Parsoid.",
+	"tooltip-ca-ve-edit": "Édit ieu kaca",
+	"visualeditor-ca-createlocaldescriptionsource": "Tambahkeun sumber pedaran lokal",
+	"visualeditor-ca-createsource": "Jieun sumber",
+	"visualeditor-ca-editsource": "Édit sumber",
+	"visualeditor-ca-editsource-section": "édit sumber",
+	"visualeditor-descriptionpagelink": "Project:VisualEditor",
+	"visualeditor-savedialog-label-create": "Jieun kaca",
+	"visualeditor-savedialog-label-error": "Kasalahan",
+	"visualeditor-savedialog-label-publish-short": "Pedalkeun",
+	"visualeditor-savedialog-label-report": "Laporkeun masalah",
+	"visualeditor-savedialog-label-save-short": "Simpen",
+	"visualeditor-savedialog-label-warning": "Kahadé",
+	"visualeditor-savedialog-review-wikitext": "Téks wiki"
+}

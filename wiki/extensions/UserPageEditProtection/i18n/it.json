@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"userpageeditprotection-desc": "Consente di limitare la modifica delle pagine utente all'utente e agli utenti autorizzati",
+	"right-editalluserpages": "Modifica tutte le pagine utente",
+	"action-editalluserpages": "modificare questa pagina utente"
+}

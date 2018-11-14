@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jack Phoenix <jack@countervandalism.net>"
+		]
+	},
+	"multiupload": "Tallenna useampia tiedostoja",
+	"multiupload-desc": "[[Special:MultiUpload|Toimintosivu useampien tiedostojen tallentamiseen kerralla]]",
+	"multiupload-text": "Käytä allaolevaa lomaketta useamman tiedoston tallentamiseen kerralla.\nVoit katsella luetteloa aiemmin tallennetuista tiedostoista sivulla [[Special:FileList|tiedostoluettelo]]. Kaikki tallennukset kirjataan myös [[Special:Log/upload|tallennuslokiin]] ja tiedostojen poistot [[Special:Log/delete|poistolokiin]].\n\nJotta saat tiedoston näkymään sivulla, käytä jotakin seuraavista muotoiluista linkkinä siihen:\n* <strong><code><nowiki>[[</nowiki>{{ns:file}}<nowiki>:Tiedosto.jpg]]</nowiki></code></strong> käyttääksesi tiedoston kokonaista versiota\n* <strong><code><nowiki>[[</nowiki>{{ns:file}}<nowiki>:Tiedosto.png|200px|thumb|left|teksti tähän]]</nowiki></code></strong> käyttääksesi tiedostoa sovitettuna 200 kuvapistettä leveään laatikkoon kuvatekstillä \"teksti tähän\"\n* <strong><code><nowiki>[[</nowiki>{{ns:media}}<nowiki>:Tiedosto.ogg]]</nowiki></code></strong> halutessasi suoran linkin tiedostoon ilman että tiedostoa näytetään.\n\nValittuasi tiedoston tämä sivu laajenee ja sallii sinun valita useampia tiedostoja ladattavaksi.\n\nPurkaaksesi tiedoston, jonka tiedostotyyppi on <code>.zip</code>, <code>.tar</code>, <code>.tar.gz</code>, tai <code>.tgz</code> ja ladataksesi sen sisältämät tiedostot, valitse pakettitiedosto ja käytä ilmaantuvaa \"{{int:multiupload-unpack-button}}\" -painiketta.",
+	"multipleupload": "Tallenna tiedostoja",
+	"multipleupload-toolbox": "Tallenna useampia tiedostoja",
+	"multiupload-submit": "Tallenna tiedostot",
+	"multiupload-uploadedto": "Tallennettiin tiedosto $1.",
+	"multiupload-row": "Tiedosto $1",
+	"multiupload-unpack-button": "Pura paketti",
+	"multiupload-notify-ok": "OK",
+	"multiupload-upload-package-error": "Virhe pakettitiedostoa tallennettaessa",
+	"multiupload-unpack-error": "Virhe pakettitiedostoa purettaessa",
+	"multiupload-unreadable-package": "Tiedostoa $1 ei voi lukea",
+	"multiupload-http-error": "Palvelimeen ei voitu yhdistää.",
+	"multiupload-file-unpacked-from": "Tiedosto <b>$1</b> paketista <b>$2</b>"
+}

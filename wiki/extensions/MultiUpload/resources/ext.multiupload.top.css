@@ -1,0 +1,30 @@
+/* make sure any "uploaded file" messages show in bold. */
+.multiupload-success-message { font-weight:bold; }
+
+/* tiny spinner */
+.multiupload-tiny-spinner {
+	height:14px; width:14px;
+	display:inline-block; vertical-align:middle;
+	/* @embed */ background:transparent url(images/tiny-spinner.gif);
+	/* IE < 8 see jquery.spinner.css */
+	zoom:1; *display:inline;
+}
+
+#mw-upload-form > :first-child {
+	display: none;
+}
+.client-js #mw-upload-form > * {
+	display: none;
+}
+.client-js #mw-upload-form {
+	/* @embed */
+	background-image: url(images/spinner.gif);
+	min-height: 20px;
+	min-width: 20px;
+	background-repeat: no-repeat;
+}
+
+/* oddly formatted h2 in 1.23? */
+fieldset.row h2 {
+	margin-top: 0;
+}

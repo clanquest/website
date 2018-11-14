@@ -1,0 +1,383 @@
+html, body {
+	color: #fff;
+	background-color: #101010;
+}
+
+h2, h3 {
+	border: none;
+	color: #fff;
+}
+
+a {
+	color: #9dc9f9;
+	transition: color .1s ease-in-out;
+}
+a:hover { color: #8899a4; }
+a:hover span {
+	/*
+	 * For coloured names the text underline will still be the link colour.
+	 * By making the span (which is used to colour the name) have an underline,
+	 * the correctly coloured will display right on top of the wrongly coloured
+	 * underline.
+	 */
+	text-decoration: underline;
+}
+.postlink {
+	border: none;
+	color: #9dc9f9;
+	text-decoration: none;
+}
+.postlink:hover {
+	background: none;
+	color: #368AD2;
+	text-decoration: underline;
+}
+#wrap {
+	background-color: #282828;
+	border: none;
+}
+fieldset dl:hover dt label {
+	color: inherit;
+}
+dd label {
+	color: #fff;
+}
+label {
+	color: #fff;
+}
+select {
+	border-color: #666;
+	background-color: #191919;
+	color: #fafafa;
+}
+input.button1,
+input.button2,
+input.button3,
+input.oo-ui-buttonElement-button,
+input.mw-htmlform-submit {
+	background: #191919;
+	border-color: #666;
+	color: #fafafa;
+}
+input.button1:hover,
+input.button2:hover,
+input.button3:hover {
+	background: #222;
+	border-color: #666;
+	color: #8899a4;
+}
+.forabg, .forumbg {
+	background-color: #191919;
+	background-image: none;
+}
+
+ul.forums {
+	background-color: inherit;
+	background-image: none;
+}
+
+li.row {
+	border-top-color: #191919;
+	border-bottom: none;
+	color: inherit;
+}
+li.row strong {
+	color: #fff;
+}
+
+ul.topiclist li {
+	color: #fff;
+	transition: background-color .1s ease-in-out;
+}
+ul.topiclist li.header {
+	background: #191919;
+	border-bottom: 1px solid #000;
+}
+ul.topiclist li.header a, .boon .inner h3 a { color: #fff; }
+ul.topiclist dd {
+	border-left-color: #191919 !important;
+}
+
+.rtl ul.topiclist dd {
+	border-right-color: none;
+	border-left-color: transparent;
+}
+
+li.row:hover {
+	background-color: #222;
+}
+
+li.row:hover dd {
+	border-left-color: #CCCCCC;
+}
+
+.rtl li.row:hover dd {
+	border-right-color: #CCCCCC;
+	border-left-color: transparent;
+}
+.pagination li a {
+	background-color: #333;
+	border-color: #111;
+	color: #fff;
+}
+
+.pagination li.ellipsis span {
+	color: #fff;
+}
+
+.boon, body#wiki .toc, body#wiki .wikitable, body#wiki .catlinks, 
+	body#wiki #preferences, body#wiki .mw-datatable, body#wiki .listfiles_nav {
+	border: 1px solid #191919;
+	box-shadow: 0 0 0 4px #222, 0 0 0 5px #191919;
+}
+.boon .inner, body#wiki .toc, body#wiki .wikitable, body#wiki .catlinks, 
+	body#wiki #preferences, body#wiki .mw-datatable, body#wiki .listfiles_nav, body#wiki #page-body .box {
+	background: #191919;
+}
+body#wiki .wikitable th { border-bottom: 1px solid #000; }
+.boon h3 {
+	border-bottom: 1px solid #222;
+}
+.navbar { background-color: inherit; }
+
+.postprofile, .postprofile strong, .postbody, .postbody .content, .content, .panel-container h2 {
+	color: #fff;
+}
+.content h2 { color: #fff; }
+p.post-notice { background-color: #282828; }
+#message-box textarea {
+	color: #fff;
+	background: #282828;
+}
+input#subject {
+	background: #282828;
+	color: #fff;
+}
+.inputbox.search {
+	background: #fff;
+	color: #000;
+}
+.inputbox:hover.seach,
+.inputbox:focus.search {
+	color: #000;
+	background: #fff;
+}
+.inputbox,
+.search-box .inputbox,
+body#wiki .mw-input input {
+	border: 1px solid #333;
+	color: #ccc;
+	background: #282828;
+}
+.inputbox:hover,
+.inputbox:focus,
+.search-box .inputbox:hover,
+.search-box .inputbox:focus,
+body#wiki .mw-input input:focus {
+	border-color: #444;
+	color: #fff;
+}
+.inputbox:focus {
+	background: #333;
+}
+select.inputbox:hover, select.inputbox:focus {
+	color: rgba(255, 255, 255, .6) !important;
+}
+fieldset.quick-login input.inputbox {
+	background: #191919;
+	color: #fff;
+	border-color: #333;
+}
+table.table1 td, .panel-container table.table1 thead th { color: #fff; }
+table.table1 tbody tr {
+	background: #191919;
+	border-color: #333;
+}
+table.table1 tbody tr:hover {
+	background: #282828;
+	color: #fff;
+}
+.codebox, blockquote, blockquote blockquote, blockquote blockquote blockquote, .attachbox {
+	background-color: #222;
+	border-color: #333;
+}
+
+/* Polls */
+fieldset.polls dl.voted { color: #fff; }
+.pollbar1 { 
+	background-color: #76a7c2;
+	border-bottom-color: #164a73;
+	border-right-color: #164a73;
+}
+.rtl .pollbar1 { border-left-color: #164a73; }
+.pollbar2 { 
+	background-color: #b1d0e0;
+	border-bottom-color: #1c5c8c;
+	border-right-color: #1c5c8c;
+}
+.rtl .pollbar2 { border-left-color: #1c5c8c; }
+.pollbar3 { 
+	background-color: #64a2d1;
+	border-bottom-color: #2470ab;
+	border-right-color: #2470ab;
+}
+.rtl .pollbar3 { border-left-color: #2470ab; }
+.pollbar4 { 
+	background-color: #5ca9e5;
+	border-bottom-color: #1f7abf;
+	border-right-color: #1f7abf;
+}
+.rtl .pollbar4 { border-left-color: #1f7abf; }
+.pollbar5 { 
+	background-color: #65b7f7;
+	border-bottom-color: #1981d1;
+	border-right-color: #1981d1;
+}
+.rtl .pollbar5 { border-left-color: #1981d1; }
+/* Contact Icons */
+.contact-icon {
+	background-image: url("./images/icons_contact.png");
+}
+.contact-icons a {
+	border-bottom: 1px solid;
+	border-right: 1px solid;
+}
+.contact-icons a:hover {
+	background-color: #282828;
+}
+.dropdown .dropdown-contents {
+	background: #222;
+	border-color: #333;
+}
+.dropdown .dropdown-contents a {
+	color: #fff;
+}
+.dropdown .pointer {
+	border-color: #333 transparent;
+}
+.dropdown .pointer-inner {
+	border-color: #222 transparent;
+}
+/* Tabs for posting and replying (i.e. attachments and polls) */
+#tabs .tab > a, body#wiki ul#preftoc li {
+	background: #191919;
+	color: #ccc;
+}
+body#wiki ul#preftoc li a { color: #ccc; }
+#tabs .tab > a:hover, body#wiki ul#preftoc li {
+	background: #191919;
+	color: #D31141;
+}
+body#wiki ul#preftoc li a:hover { color: #D31141; }
+
+#tabs .activetab > a,
+#tabs .activetab > a:hover,
+body#wiki ul#preftoc li.selected {
+	background: #191919;
+	background: -moz-linear-gradient(top, #282828 0%, #191919 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #282828), color-stop(100%, #191919));
+	background: -webkit-linear-gradient(top, #282828 0%, #191919 100%);
+	background: -o-linear-gradient(top, #282828 0%, #191919 100%);
+	background: -ms-linear-gradient(top, #282828 0%, #191919 100%);
+	background: linear-gradient(to bottom, #282828 0%, #191919 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E2F2FF', endColorstr='#CADCEB', GradientType=0 );
+	border-color: #191919;
+	box-shadow: 0 1px 1px #282828 inset;
+	color: #fff;
+}
+body#wiki ul#preftoc li.selected a { color: #fff; }
+/* MCP Tabs & More */
+#navigation #active-subsection a {
+	background: #333;
+	color: #d31141;
+}
+
+#navigation a, #navigation a:hover {
+	color: #fff;
+	background: #282828;
+}
+
+/* Mini tabbed menu used in MCP */
+#minitabs .tab > a {
+	background-color: #333;
+}
+
+#minitabs .activetab > a,
+#minitabs .activetab > a:hover {
+	background-color: #282828;
+	color: #fff;
+}
+
+dl.details dt {
+	color: #fff;
+	font-weight: bold;
+}
+
+dl.details dd { color: #fff; }
+
+.posthilit {
+	background: #9dc9f9;
+	color: #105289;
+}
+
+/* Search form */
+select#search_forum {
+	background: #282828;
+	color: #fff;
+}
+/* PhpBB Alert */
+.phpbb_alert {
+	background-color: #191919;
+	border-color: #333;
+}
+.phpbb_alert .alert_close {
+	background-image: url("./images/alert_close.png");
+}
+
+body#wiki .catlinks li {
+	border-left: 1px solid #a2a9b1;
+}
+
+body#wiki textarea, body#wiki .oo-ui-inputWidget-input {
+	color: #fff;
+    background: #191919;
+    border: 1px solid #333;
+}
+body#wiki textarea:focus, body#wiki input:focus, body#wiki ul#preftoc li a:focus { outline: none; }
+body#wiki a.new { color: #f99d9d !important; }
+/* Media Wiki Visual Editor */
+body#wiki .ve-ui-mwSaveDialog-options { 
+	background: #191919;
+	border: 1px solid #333;
+	border-top: none;
+}
+body#wiki .oo-ui-window-frame { background: #191919 !important; }
+body#wiki .oo-ui-windowManager-modal > .oo-ui-dialog { background: rgba(25,25,25,0.5); }
+body#wiki .ve-ui-mwSaveDialog-editSummary-count { border-left: none; }
+body#wiki .ve-ui-mwSaveDialog-summary { 
+	background: #222;
+	border: none;
+}
+body#wiki .ve-ui-mwSaveDialog-savePanel textarea.oo-ui-inputWidget-input { box-shadow: none; }
+body#wiki .oo-ui-bookletLayout { color: #fff; }
+body#wiki .oo-ui-processDialog-actions-other a.oo-ui-buttonElement-button,
+	body#wiki .oo-ui-processDialog-actions-safe a.oo-ui-buttonElement-button {
+    background-color: #191919;
+    color: #fff;
+    border: 1px solid #333;
+}
+body#wiki .oo-ui-windowManager-modal.oo-ui-windowManager-floating > .oo-ui-dialog > .oo-ui-window-frame {
+	border-color: #333;
+}
+body#wiki .oo-ui-processDialog-content .oo-ui-window-body {
+	outline: none;
+}
+body#wiki .wikiEditor-preview-contents { background: #191919 !important; }
+body#wiki td.diff-context {
+    background: #191919;
+    border-color: #e6e6e6;
+	color: #fff;
+}
+body#wiki td.diff-deletedline .diffchange {
+    background: #77580f;
+}

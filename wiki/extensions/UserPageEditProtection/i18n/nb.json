@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby",
+			"Nghtwlkr"
+		]
+	},
+	"userpageeditprotection-desc": "Begrenser redigering av brukersidene til brukeren og tillatte bidragsytere",
+	"right-editalluserpages": "Redigere alle brukersider",
+	"action-editalluserpages": "redigere denne brukersiden"
+}

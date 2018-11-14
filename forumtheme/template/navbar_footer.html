@@ -1,0 +1,19 @@
+<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-footer" class="linklist bulletin" role="menubar">
+		<!-- IF U_WATCH_FORUM_LINK and not S_IS_BOT --><li data-last-responsive="true"><a href="{U_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" data-ajax="toggle_link" data-toggle-text="{S_WATCH_FORUM_TOGGLE}" data-toggle-url="{U_WATCH_FORUM_TOGGLE}"><i class="fa fa-<!-- IF S_WATCHING_FORUM -->square<!-- ELSE -->check-square<!-- ENDIF -->" data-toggle-class="fa fa-<!-- IF S_WATCHING_FORUM -->check-square<!-- ELSE -->square<!-- ENDIF -->"></i> {S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+
+		<!-- EVENT overall_footer_timezone_before -->
+		<li class="rightside">{S_TIMEZONE}</li>
+		<!-- EVENT overall_footer_timezone_after -->
+		<!-- IF not S_IS_BOT -->
+			<li class="rightside"><a href="{U_DELETE_COOKIES}" data-ajax="true" data-refresh="true" role="menuitem"><i class="fa fa-trash"></i> {L_DELETE_COOKIES}</a></li>
+		<!-- ENDIF -->
+		<!-- EVENT overall_footer_teamlink_before -->
+		<!-- IF U_TEAM --><li class="rightside" data-last-responsive="true"><a href="{U_TEAM}" role="menuitem"><i class="fa fa-users"></i> {L_THE_TEAM}</a></li><!-- ENDIF -->
+		<!-- EVENT overall_footer_teamlink_after -->
+	</ul>
+
+	</div>
+</div>

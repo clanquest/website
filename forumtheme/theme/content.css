@@ -1,0 +1,91 @@
+.post-box .inner {
+	padding: 0;
+}
+.post-container {
+	display: flex;
+}
+.postprofile {
+	background: #111;
+	border: none;
+	border-right: 1px solid #222;
+	float: left;
+	margin: 0 10px 0 0;
+	max-width: 200px;
+	padding: 8px 0 8px 8px;
+}
+@media all and (max-width: 700px) {
+	.post-container {
+		flex-direction: column;
+	}
+
+	.post-container .postprofile {
+		border-right: none;
+		margin: 0;
+		max-width: 100%;
+	}
+
+	.post-container .postbody {
+		box-sizing: border-box;
+		padding: 8px;
+		position: relative;
+		width: 100%;
+	}
+
+	.has-profile ul.post-buttons {
+		right: 8px;
+		top: 6px;
+	}
+}
+.postprofile strong {
+	font-weight: bold;
+}
+.postprofile .avatar img {
+	max-width: 180px;
+}
+.postbody {
+	width: 78%;
+	padding: 8px 8px 8px 0;
+}
+.private-message .postbody { width: 74%; }
+.back2top {
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+}
+.search .postprofile {
+	float: left;
+}
+#topicreview {
+	padding: 10px;
+	height: 400px;
+}
+
+#cp-main {
+	width: 80%;
+	margin-left: 10px;
+}
+
+span.topictitle {
+	font-size: 1.2em;
+}
+
+blockquote {
+	background-image: none;
+	margin-left: 0;
+}
+blockquote cite {
+	margin-left: 0;
+	position: relative;
+}
+
+blockquote cite:before {
+  content: "\f10d";
+  display: inline;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #999;
+  font-size: 14px;
+  padding-right: .5em;
+}

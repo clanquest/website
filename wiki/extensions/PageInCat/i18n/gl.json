@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"pageincat-desc": "Engade unha función analítica, <code><nowiki>{{#incat:...}}</nowiki></code>, para determinar se a páxina actual está presente nunha categoría especificada",
+	"pageincat-wrong-warn": "'''Atención:''' <code><nowiki>{{#incat:...}}</nowiki></code> detectou incorrectamente {{PLURAL:$2|a categoría $1|as categorías $1}}. Debido a isto, esta vista previa pode non ser correcta. A versión gardada da páxina debería mostrarse correctamente.",
+	"pageincat-very-wrong-warn": "'''Atención:''' <code><nowiki>{{#incat:...}}</nowiki></code> detectou incorrectamente {{PLURAL:$2|a categoría $1|as categorías $1}}. Debido a isto, esta vista previa pode non ser correcta. Poida que incluíse categorías dentro de declaracións <code><nowiki>{{#incat:...}}</nowiki></code>, o que pode provocar que non se mostre correctamente."
+}

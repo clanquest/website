@@ -1,0 +1,6 @@
+<?php
+
+return [
+	// The path to phpBB
+	'phpbb_root_path' => './forums',
+];

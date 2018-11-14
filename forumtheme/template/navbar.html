@@ -1,0 +1,111 @@
+<div class="cq-navbar" id="cq-navbar">
+	<div class="width-container mobile-width-container">
+		<div class="cq-navbar-inner">
+			<a id="cq-navbar-toggle">
+				<i class="fa fa-bars"></i>
+			</a>
+			<a href="{U_SITE_HOME}" class="logo-link">
+				<img src="{ROOT_PATH}styles/clanquest/images/cq_shield_small.png" srcset="/forums/styles/clanquest/images/cq_shield_small_2x.png 2x" alt="Clan Quest - The Questing Clan">
+			</a>
+			<nav class="main-navigation">
+				<ul class="navigation-list">
+					<li>
+						<a href="{U_SITE_HOME}/forums">Forums</a>
+					</li>
+					<li>
+						<a href="{U_SITE_HOME}/wiki/Home">Wiki</a>
+					</li>
+					<li>
+						<a href="{U_SITE_HOME}/about">About</a>
+					</li>
+					<li class="social-links">
+						<a href="https://twitter.com/ClanQuest" target="_blank"><div class="bg"></div><img src="{ROOT_PATH}styles/clanquest/theme/images/social_twitter_gold.png"></a>
+						<a href="https://www.facebook.com/ClanQuest" target="_blank"><div class="bg"></div><img src="{ROOT_PATH}styles/clanquest/theme/images/social_facebook_gold.png"></a>
+						<!-- IF S_REGISTERED_USER and not S_USER_NEW -->
+							<a href="https://discord.gg/0jrRr1ANzRC6biqZ" target="_blank"><div class="bg"></div><img src="{ROOT_PATH}styles/clanquest/theme/images/social_discord_gold.png"></a>
+						<!-- ENDIF -->
+					</li>
+				</ul>
+			</nav>
+
+			<div class="stretch"></div>
+
+			<div class="user-navigation">
+				<ul class="navigation-list">
+					<!-- IF S_REGISTERED_USER -->
+						<!-- IF (S_DISPLAY_PM and PRIVATE_MESSAGE_COUNT > 0) or NOTIFICATIONS_COUNT > 0 -->
+							<li class="user-menu-item pm-count">
+								<a href="<!-- IF NOTIFICATIONS_COUNT > 0 -->/forums/ucp.php?i=ucp_notifications&amp;mode=notification_list<!-- ELSE -->{U_PRIVATEMSGS}<!-- ENDIF -->">
+									<i class="fa fa-circle"></i>
+								</a>
+							</li>
+						<!-- ENDIF -->
+						<li id="username_logged_in" class="user-menu-item username">
+							<!-- EVENT navbar_header_username_prepend -->
+							<a href="{U_PROFILE}">{CURRENT_USERNAME_SIMPLE}</a>
+							<!-- EVENT navbar_header_username_append -->
+						</li>
+						<!-- IF CURRENT_USER_AVATAR -->
+							<li class="user-menu-item avatar">
+								<a href="{U_PROFILE}">
+									{CURRENT_USER_AVATAR}
+								</a>
+							</li>
+						<!-- ENDIF -->
+						<li class="user-menu-item user-menu-dropdown">
+							<div class="header-profile dropdown-container dropdown-left">
+								<a href="dropdown-trigger"><i class="fa fa-caret-down"></i></a>
+								<div class="dropdown hidden">
+									<div class="user-dropdown-contents">
+										<ul class="user-dropdown-links" role="menu" id="wiki-dropdown">
+											<li><a href="/wiki/Special:Preferences" title="Wiki Preferences" role="menuitem">Wiki Preferences</a></li>
+											<li><a href="/wiki/User:{S_USERNAME}" title="Wiki Profile" role="menuitem">Wiki Profile</a></li>
+											<li><a href="/wiki/Special:Contributions/{S_USERNAME}" title="Wiki Contributions" role="menuitem">Wiki Contributions</a></li>
+											<li><a href="/wiki/Special:Watchlist" title="Wiki Watchlist" role="menuitem">Wiki Watchlist</a></li>
+										</ul>
+										<ul class="user-dropdown-links" role="menu" id="forum-dropdown">
+											<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
+
+											<!-- EVENT navbar_header_profile_list_before -->
+											<li><a href="/forums/ucp.php?i=prefs&amp;mode=personal">Board Preferences</a></li>
+											<li><a href="{U_USER_PROFILE}" title="{L_READ_PROFILE}" role="menuitem">Forum Profile</a></li>
+											<li><a href="/forums/ucp.php?i=ucp_notifications&amp;mode=notification_list">Board Notifications</a></li>
+											<li><a href="/forums/search.php">Advanced Search</a></li>
+
+											<!-- EVENT navbar_header_profile_list_after -->
+										</ul>
+										<div class="user-dropdown-actions">
+												<div class="user-dropdown-action">
+													<a href="{U_PRIVATEMSGS}" title="Message Inbox"><i class="fa fa-envelope"></i><!-- IF PRIVATE_MESSAGE_COUNT > 0 --> {PRIVATE_MESSAGE_COUNT}<!-- ENDIF --></a>
+												</div>
+											<!-- IF U_MCP -->
+												<div class="user-dropdown-action">
+													<a href="/wiki/Special:SpecialPages" title="Special Wiki Pages"><i class="fa fa-asterisk"></i></a>
+												</div>
+												<div class="user-dropdown-action">
+													<a href="{U_MCP}" title="{L_MCP}"><i class="fa fa-gavel"></i></a>
+												</div>
+											<!-- ENDIF -->
+											<!-- IF U_ACP -->
+												<div class="user-dropdown-action">
+													<a href="{U_ACP}" title="{L_ACP}"><i class="fa fa-cogs"></i></a>
+												</div>
+											<!-- ENDIF -->
+											<div class="user-dropdown-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem" style="text-align: right;">{L_LOGIN_LOGOUT} <i class="fa fa-sign-out"></i></a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					<!-- ELSE -->
+						<li class="user-menu-item"  data-skip-responsive="true"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">{L_LOGIN_LOGOUT}</a></li>
+						<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+							<li class="user-menu-item" data-skip-responsive="true"><a href="{U_REGISTER}" role="menuitem">{L_REGISTER}</a></li>
+						<!-- ENDIF -->
+						<!-- EVENT navbar_header_logged_out_content -->
+					<!-- ENDIF -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

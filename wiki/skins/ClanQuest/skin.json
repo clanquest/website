@@ -1,0 +1,56 @@
+{
+	"name": "ClanQuest",
+	"version": "0.1",
+	"author": "Clan Quest",
+	"url": "https://clanquest.org",
+	"descriptionmsg": "Clan Quest custom wiki skin",
+	"namemsg": "skinname-clanquest",
+	"license-name": "CC0-1.0",
+	"type": "skin",
+	"ValidSkinNames": {
+		"clanquest": "ClanQuest"
+	},
+	"MessagesDirs": {
+		"ClanQuest": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"skins.clanquest": {
+			"class": "ResourceLoaderSkinModule",
+			"position": "top",
+			"styles": {
+				"resources/libraries/normalise.css": {
+					"media": "screen"
+				},
+				"resources/screen-common.less": {
+					"media": "screen"
+				},
+				"resources/screen-desktop.less": {
+					"media": "screen and (min-width: 751px)"
+				},
+				"resources/screen-mobile.less": {
+					"media": "screen and (max-width: 750px)"
+				},
+				"resources/print.css": {
+					"media": "print"
+				}
+			}
+		},
+		"skins.clanquest.js": {
+			"position": "top",
+			"scripts": [
+				"main.js"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "ClanQuest"
+	},
+	"AutoloadClasses": {
+		"SkinClanQuest": "ClanQuest.skin.php",
+		"ClanQuestTemplate": "ClanQuestTemplate.php"
+	},
+	"manifest_version": 1
+}

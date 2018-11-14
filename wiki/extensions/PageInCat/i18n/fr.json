@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"pageincat-desc": "Ajoute une fonction de l'analyseur <code><nowiki>{{#incat:...}}</nowiki></code> pour déterminer si la page courante est dans une catégorie spécifiée",
+	"pageincat-wrong-warn": "'''Attention:''' {{PLURAL:$2|La catégorie $1a mal été détectée|Les catégories $1 ont mal été détectées}} par <code><nowiki>{{#incat:...}}</nowiki></code>, et par conséquent, cet aperçu peut être incorrect. La version enregistrée de cette page devrait être affichée correctement.",
+	"pageincat-very-wrong-warn": "'''Attention:''' {{PLURAL:$2|La catégorie $1a été mal détectée|Les catégories $1ont été mal détectées}} par <code><nowiki>{{#incat:...}}</nowiki></code>, et par conséquent cet aperçu peut être incorrect. Cela peut être causé par des catégories incluses à l'intérieur des déclarations <code><nowiki>{{#incat:...}}</nowiki></code>, et peut provoquer un affichage incohérent."
+}

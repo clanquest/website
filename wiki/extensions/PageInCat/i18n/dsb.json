@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"pageincat-desc": "Pśidawa parserowu funkciju <code><nowiki>{{#incat:...}}</nowiki></code>, aby zwěsćiło, lěc aktualny bok jo w pódanej kategoriji",
+	"pageincat-wrong-warn": "'''Warnowanje:''' {{PLURAL:$2|Kategorija $1 je|Kategoriji $1 stej|Kategorije $1 su|Kategorije $1 su}} se pśez <code><nowiki>{{#incat:...}}</nowiki></code> wopak {{PLURAL:$2|spóznała|spóznałej|spóznali|spóznali}}, a togodla mógał pśeglěd wopak byś. Składowana wersija boka by měła se korektnje zwobrazniś.",
+	"pageincat-very-wrong-warn": "'''Warnowanje:''' {{PLURAL:$2|Kategorija $1 jo|Kategoriji $1 stej|Kategorije $1 su|Kategorije $1 su}} se pśez <code><nowiki>{{#incat:...}}</nowiki></code> wopak {{PLURAL:$2|spóznała|spóznałej|spóznali|spóznali}}, a togodla mógał pśeglěd wopak byś. Pśicyna mógła byś, až su se kategorije do wurazow <code><nowiki>{{#incat:...}}</nowiki></code> zapśimjeli, což mógło k inkonsistentnemu zwobraznjenjeju wjasć."
+}

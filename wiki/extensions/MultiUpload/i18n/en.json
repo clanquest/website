@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lee Worden"
+		]
+	},
+	"multiupload": "Upload multiple files",
+	"multiupload-desc": "[[Special:MultiUpload|Special page to upload multiple files at once]]",
+	"multiupload-text": "Use the form below to upload multiple files.\nTo view or search previously uploaded files go to the [[Special:FileList|list of uploaded files]], (re)uploads are also logged in the [[Special:Log/upload|upload log]], deletions in the [[Special:Log/delete|deletion log]].\n\nTo include a file in a page, use a link in one of the following forms:\n* <strong><code><nowiki>[[</nowiki>{{ns:file}}<nowiki>:File.jpg]]</nowiki></code></strong> to use the full version of the file\n* <strong><code><nowiki>[[</nowiki>{{ns:file}}<nowiki>:File.png|200px|thumb|left|alt text]]</nowiki></code></strong> to use a 200 pixel wide rendition in a box in the left margin with \"alt text\" as description\n* <strong><code><nowiki>[[</nowiki>{{ns:media}}<nowiki>:File.ogg]]</nowiki></code></strong> for directly linking to the file without displaying the file.\n\nOnce you select a file, this page will expand, allowing you to select more files before uploading.\n\nTo unpack a <code>.zip</code>, <code>.tar</code>, <code>.tar.gz</code>, or <code>.tgz</code> file and upload the files contained within it, select the package file and then use the \"{{int:multiupload-unpack-button}}\" button that appears.",
+	"multipleupload": "Upload files",
+	"multipleupload-toolbox": "Upload multiple files",
+	"multiupload-submit": "Upload files",
+	"multiupload-uploadedto": "Uploaded file $1.",
+	"multiupload-row": "File $1",
+	"multiupload-unpack-button": "Unpack",
+	"multiupload-notify-ok": "OK",
+	"multiupload-upload-package-error": "Error uploading package file",
+	"multiupload-unpack-error": "Error unpacking package file",
+	"multiupload-unreadable-package": "Can't read file $1",
+	"multiupload-http-error": "Couldn't connect to server.",
+	"multiupload-file-unpacked-from": "File <b>$1</b> from package <b>$2</b>"
+}

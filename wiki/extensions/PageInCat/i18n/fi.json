@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"VezonThunder"
+		]
+	},
+	"pageincat-desc": "Lisää parserifunktion <code><nowiki>{{#incat:...}}</nowiki></code>, jolla voi määrittää, onko nykyinen sivu tietyssä luokassa",
+	"pageincat-wrong-warn": "'''Varoitus:''' <code><nowiki>{{#incat:...}}</nowiki></code> tunnisti {{PLURAL:$2|luokan $1|luokat $1}} virheellisesti ja siten tämä esikatselu voi olla virheellinen. Tämän sivun tallennettu versio näytettäneen oikein.",
+	"pageincat-very-wrong-warn": "'''Varoitus:''' <code><nowiki>{{#incat:...}}</nowiki></code> tunnisti {{PLURAL:$2|luokan $1|luokat $1}} virheellisesti ja siten tämä esikatselu voi olla virheellinen. Syynä voi olla luokkien sisällyttäminen <code><nowiki>{{#incat:...}}</nowiki></code>-lauseiden sisälle, mikä saattaa johtaa sivun esittämiseen epäyhtenäisesti."
+}

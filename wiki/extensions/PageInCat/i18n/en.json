@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"pageincat-desc": "Adds a parser function <code><nowiki>{{#incat:...}}</nowiki></code> to determine if the current page is in a specified category",
+	"pageincat-wrong-warn": "'''Warning:''' The {{PLURAL:$2|category $1 was|categories $1 were}} detected incorrectly by <code><nowiki>{{#incat:...}}</nowiki></code>, and as a result this preview may be incorrect. The saved version of this page should be displayed in the correct manner.",
+	"pageincat-very-wrong-warn": "'''Warning:''' The {{PLURAL:$2|category $1 was|categories $1 were}} detected incorrectly by <code><nowiki>{{#incat:...}}</nowiki></code>, and as a result this preview may be incorrect. This can be caused by including categories inside of <code><nowiki>{{#incat:...}}</nowiki></code> statements, and may result in inconsistent display."
+}

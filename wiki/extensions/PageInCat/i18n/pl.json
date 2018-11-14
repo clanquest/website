@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"BeginaFelicysym"
+		]
+	},
+	"pageincat-desc": "Dodaje funkcję analizatora <code><nowiki>{{#incat:...}}</nowiki></code> ustalającą, czy bieżąca strona jest w określonej kategorii",
+	"pageincat-wrong-warn": "'''Ostrzeżenie:'''  {{PLURAL:$2| kategoria $1 została nieprawidłowo wykryta|kategorie $1 zostały nieprawidłowo wykryte}} przez <code><nowiki>{{#incat:...}}</nowiki></code>, w wyniku czego podgląd może być niepoprawny. Zapisana wersja tej strony powinna być wyświetlona w odpowiedni sposób.",
+	"pageincat-very-wrong-warn": "'''Ostrzeżenie:'''  {{PLURAL:$2| kategoria $1 została  nieprawidłowo wykryta|kategorie $1 zostały nieprawidłowo wykryte}} przez <code><nowiki>{{#incat:...}}</nowiki></code>, w wyniku czego podgląd może być niepoprawny. Może to być spowodowane przez dołączenie kategorii wewnątrz deklaracji <code><nowiki>{{#incat:...}}</nowiki></code> i może powodować niespójne wyświetlanie."
+}

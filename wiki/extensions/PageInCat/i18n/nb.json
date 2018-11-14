@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"pageincat-desc": "Legger til parserfunksjonen <code><nowiki>{{#incat:...}}</nowiki></code> for å sjekke om den gjeldende siden er i en gitt kategori",
+	"pageincat-wrong-warn": "'''Advarsel:''' {{PLURAL:$2|Kategorien|Kategoriene}} $1 ble oppdaget av <code><nowiki>{{#incat:...}}</nowiki></code> ved en feil, og som et resultat av det kan denne forhåndsvisningen være feil. Den lagrede versjonen av denne siden skal vises på riktig måte.",
+	"pageincat-very-wrong-warn": "'''Advarsel:''' {{PLURAL:$2|Kategorien|Kategoriene}} $1 ble oppdaget av <code><nowiki>{{#incat:...}}</nowiki></code> ved en feil, og på grunn av dette kan denne forhåndsvisningen være feil. Dette kan være forårsaket av at kategorier har blitt inkludert inni <code><nowiki>{{#incat:...}}</nowiki></code>-erklæringer, og kan føre til inkonsekvent visning."
+}

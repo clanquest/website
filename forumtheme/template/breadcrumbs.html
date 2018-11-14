@@ -1,0 +1,40 @@
+<div class="width-container">
+	<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+		<!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
+		<!-- EVENT overall_header_breadcrumbs_before -->
+		<li class="breadcrumbs">
+			<!-- IF U_SITE_HOME --><span class="crumb"{$MICRODATA}><a href="{U_SITE_HOME}" data-navbar-reference="home" itemprop="url"><span itemprop="title">{L_SITE_HOME}</span></a></span><!-- ENDIF -->
+			<!-- EVENT overall_header_breadcrumb_prepend -->
+			<span class="crumb"{$MICRODATA}><a href="{U_INDEX}" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">{L_INDEX}</span></a></span>
+			<!-- BEGIN navlinks -->
+				<!-- EVENT overall_header_navlink_prepend -->
+				<span class="crumb"{$MICRODATA}<!-- IF navlinks.MICRODATA --> {navlinks.MICRODATA}<!-- ENDIF -->><a href="{navlinks.U_VIEW_FORUM}" itemprop="url"><span itemprop="title">{navlinks.FORUM_NAME}</span></a></span>
+				<!-- EVENT overall_header_navlink_append -->
+			<!-- END navlinks -->
+			<!-- EVENT overall_header_breadcrumb_append -->
+		</li>
+		<!-- EVENT overall_header_breadcrumbs_after -->
+
+		<li id="quick-links" class="rightside<!-- IF not S_DISPLAY_QUICK_LINKS and not S_DISPLAY_SEARCH --> hidden<!-- ENDIF -->" data-skip-responsive="true">
+			<ul>
+				<!-- EVENT navbar_header_quick_links_before -->
+
+				<!-- IF S_DISPLAY_SEARCH -->
+					<!-- IF S_USER_LOGGED_IN -->
+						<li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a></li>
+					<!-- ENDIF -->
+					<!-- IF S_LOAD_UNREADS -->
+						<li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li>
+					<!-- ENDIF -->
+				<!-- ENDIF -->
+
+				<!-- IF not S_IS_BOT and (S_DISPLAY_MEMBERLIST or U_TEAM) -->
+					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+					<!-- IF U_TEAM --><li><a href="{U_TEAM}">{L_THE_TEAM}</a></li><!-- ENDIF -->
+				<!-- ENDIF -->
+
+				<!-- EVENT navbar_header_quick_links_after -->
+			</ul>
+		</li>
+	</ul>
+</div>

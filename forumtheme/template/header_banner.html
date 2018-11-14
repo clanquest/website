@@ -1,0 +1,23 @@
+<!-- IF LARGE_HEADER -->
+<div class="header-banner header-banner-large">
+<!-- ELSE -->
+<div class="header-banner">
+<!-- ENDIF -->
+	<div class="header-banner-content width-container mobile-width-container">
+		<!-- IF LARGE_HEADER --><!-- INCLUDE large_header.html --><!-- ENDIF -->
+		<!-- IF not HIDE_TITLE --><h1 class="page-title">{PAGE_TITLE}</h1><!-- ENDIF -->
+
+		<!-- IF IS_WIKI or (S_DISPLAY_SEARCH and not S_IN_SEARCH) -->
+		<div id="search-box" class="search-box search-header" role="search">
+			<form action="<!-- IF IS_WIKI -->/wiki/index.php<!-- ELSE -->{U_SEARCH}<!-- ENDIF -->" method="get" id="search">
+			<fieldset>
+				<input name="<!-- IF IS_WIKI -->search<!-- ELSE -->keywords<!-- ENDIF -->" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
+				<select class="inputbox" id="search-scope"><option value="{U_SEARCH}" data-name="keywords"<!-- IF not IS_WIKI --> selected<!-- ENDIF -->>in forums</option><option value="/wiki/index.php" data-name="search"<!-- IF IS_WIKI --> selected<!-- ENDIF -->>in wiki</option></select>
+				<input type="hidden" name="title" value="Special:Search">
+				{S_SEARCH_HIDDEN_FIELDS}
+			</fieldset>
+			</form>
+		</div>
+		<!-- ENDIF -->
+	</div>
+</div>

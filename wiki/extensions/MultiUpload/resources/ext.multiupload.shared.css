@@ -1,0 +1,28 @@
+fieldset.row > div.row {
+	width: 100%;
+	position: relative;
+}
+
+fieldset.row table {
+	clear: right;
+}
+
+.multiupload-close-button-container {
+	position:absolute; background:transparent;
+	width:16px; height:16px; top:-15px; right:-11px;
+}
+
+.multiupload-close-button {
+	display:inline-block; vertical-align:middle;
+	width:16px; height:16px;
+	/* IE < 8 Hacks borrowed wholesale from jquery.spinner.css */
+	zoom:1; *display:inline;
+}
+
+fieldset.row:hover .multiupload-close-button {
+	/* @embed */ background: transparent url(images/close-button.png);
+}
+
+fieldset.row .multiupload-close-button:hover {
+	/* @embed */ background: transparent url(images/close-button-highlighted.png);
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"아라",
+			"Ykhwong"
+		]
+	},
+	"pageincat-desc": "현재 문서가 특정 분류에 있는지 확인하는 <code><nowiki>{{#incat:...}}</nowiki></code> 파서 함수 추가",
+	"pageincat-wrong-warn": "'''경고:''' {{PLURAL:$2|$1 분류|$1 분류}}는 <code><nowiki>{{#incat:...}}</nowiki></code>로 잘못 감지했고 결과 미리 보기가 잘못되었을 수 있습니다. 이 문서의 저장한 버전은 올바른 방식으로 보여야 합니다.",
+	"pageincat-very-wrong-warn": "'''경고:''' {{PLURAL:$2|$1 분류|$1 분류}}는 <code><nowiki>{{#incat:...}}</nowiki></code>로 잘못 감지했고 결과 미리 보기가 잘못되었을 수 있습니다. <code><nowiki>{{#incat:...}}</nowiki></code> 문 안쪽에 분류를 포함하여 발생될 수 있으며, 일관성이 없이 표시될 수 있습니다."
+}

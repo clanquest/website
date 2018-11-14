@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Otokoume",
+			"Shirayuki"
+		]
+	},
+	"userpageeditprotection-desc": "利用者ページの編集を利用者本人と許可された編集者のみに制限する",
+	"right-editalluserpages": "全利用者ページを編集",
+	"action-editalluserpages": "この利用者ページを編集"
+}

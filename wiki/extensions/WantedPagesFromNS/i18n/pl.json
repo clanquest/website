@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kazimierz Król"
+		]
+	},
+	"wpfromns-desc": "Lista potrzebnych stron z przestrzeni nazw",
+	"wpfromns-links": "{{PLURAL:$1|1 link|$1 linki|$1 linków}}",
+	"wpfromns-nons": "WantedPagesFromNS: nie podano przestrzeni nazw (namespace)!",
+	"wpfromns-nores": "Brak stron do wyświetlenia."
+}
