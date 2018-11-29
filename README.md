@@ -26,10 +26,23 @@ Contributions to the codebase are expected to follow our standards:
 * Keep performance in mind. We won't accept code that is unnecessarily waste server resources.
 * Test your code. Make sure your website code works, is free of syntax errors, and doesn’t break any other website features.
 
+### Pull request guidelines
+
+In this repository we expect contributions to be sent in the form of a pull request, or PR for short. In addition to the contribution guidelines above, please keep in mind the following PR guidelines as well:
+
+* Each PR should not contain more than one feature or fix. If you can't describe your change in one sentence without using the word "and", the PR probably does too many things. Limiting each PR to one change makes it easier to review and easier to find in the history of the repository.
+    - This does not exclude having multiple commits on a PR branch.
+* Describe the change you are making in the PR description. The title of the PR should be a single sentence explaining the change briefly. The description can explain the why and how if necessary.
+* Make sure that your change works. Seriously, start up a local instance and make sure that your change actually does what you expect it to.
+* If you make visible changes, include a screenshot in the PR description. This way the reviewer can review the style changes without having to pull the branch and running a local server. If relevant, include both a before and after screenshot.
+* Be patient. Your code will be reviewed as quickly as possible by one of the repository owners, but they have real life obligations too, so it may take a bit. They may also request you to make changes to bring the code up to standards. This is not done to spite you, but to maintain a healthy code base that makes future contributions possible.
+
+PRs failing to follow either the contribution or PR guidelines may be rejected without detailed review until the changes are brought up to standards.
+
 ### Developer setup
 
 The Clan Quest website runs on a standard LAMP (Linux/Apache/MySQL/PHP) backend. Our server runs PHP 5.6 with MariaDB 10.1. You will need to populate config.php (inside the includes directory) with appropriate URLs and paths. Both PhpBB and MediaWiki should reside in the same database.
 
-To set up phpBB we recommend a fresh install in /forums with symlinks to both the prosilver base style and Clan Quest style. 
+To set up phpBB we recommend a fresh install in /forums with symlinks to both the prosilver base style and Clan Quest style.
 
-To set up MediaWiki we recommend a fresh install in your /wiki with symlinks to both the Extensions and Skins directory. 
+To set up MediaWiki we recommend a fresh install in your /wiki with symlinks to both the Extensions and Skins directory.
