@@ -33,9 +33,11 @@ In this repository we expect contributions to be sent in the form of a pull requ
 * Each PR should not contain more than one feature or fix. If you can't describe your change in one sentence without using the word "and", the PR probably does too many things. Limiting each PR to one change makes it easier to review and easier to find in the history of the repository.
     - This does not exclude having multiple commits on a PR branch.
 * Describe the change you are making in the PR description. The title of the PR should be a single sentence explaining the change briefly. The description can explain the why and how if necessary.
+* If you PR resolves a GitHub issue, make sure to link the PR by putting "resolves #0" where 0 is replaced with the issue number. This will automatically close the issue once the PR is merged.
 * Make sure that your change works. Seriously, start up a local instance and make sure that your change actually does what you expect it to.
 * If you make visible changes, include a screenshot in the PR description. This way the reviewer can review the style changes without having to pull the branch and running a local server. If relevant, include both a before and after screenshot.
 * Be patient. Your code will be reviewed as quickly as possible by one of the repository owners, but they have real life obligations too, so it may take a bit. They may also request you to make changes to bring the code up to standards. This is not done to spite you, but to maintain a healthy code base that makes future contributions possible.
+* Reviewed PRs are generally left for the original author to merge. However, if you want the PR to be merged as soon as the reviewer has approved it, you can request so in the PR description.
 
 PRs failing to follow either the contribution or PR guidelines may be rejected without detailed review until the changes are brought up to standards.
 
