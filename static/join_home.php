@@ -35,7 +35,7 @@
 	in RuneScape 3. With time, the guild has developed as its own entity, and its membership is unique 
 	and growing. If you have a love for the more retro of Jagex's MMOs, check out the OSRS Guild!</p>
 
-	<p>Want to become a noob? <a href="http://services.runescape.com/m=forum/forums.ws?93,94,541,65763993">Become a member!</a></p>
+	<p>Want to become a noob? <a href="https://clanquest.org/forums/viewforum.php?f=2">Become a member!</a></p>
 
 	<h2>Real World</h2>
 
@@ -58,7 +58,7 @@
 	We’re a laid back group who focuses on our community first and foremost. We invite anyone 
 	from novice to expert to join us for their next adventure.</p>
 
-	<p>The adventure continues... <a href="http://services.runescape.com/m=forum/forums.ws?93,94,541,65763993">Will you be the next noob?</a></p>
+	<p>The adventure continues... <a href="https://clanquest.org/forums/viewforum.php?f=2">Will you be the next noob?</a></p>
 	<img src="/forums/styles/clanquest/images/cq_shield.png" srcset="/forums/styles/clanquest/images/cq_shield_2x.png 2x" alt="Clan Quest">
 
 </div>
