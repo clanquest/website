@@ -89,3 +89,7 @@ blockquote cite:before {
   font-size: 14px;
   padding-right: .5em;
 }
+
+dl.icon {
+	background-size: contain;
+}
