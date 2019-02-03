@@ -90,6 +90,6 @@ blockquote cite:before {
   padding-right: .5em;
 }
 
-dl.icon {
+.topiclist dl.icon {
 	background-size: contain;
 }
