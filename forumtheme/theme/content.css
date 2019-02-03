@@ -91,5 +91,5 @@ blockquote cite:before {
 }
 
 .topiclist dl.icon {
-	background-size: contain;
+	background-size: auto 32px;
 }
