@@ -1,0 +1,27 @@
+{
+    "name": "multidimensional/phpbbauth",
+    "type": "mediawiki-extension",
+    "description": "A Mediawiki extension for phpBB authentication using Auth_remoteuser.",
+    "version": "0.0.6",
+    "homepage": "https://github.com/multidimension-al/cakephpify",
+    "license": "MIT",
+    "authors": [{
+        "name": "multidimension.al",
+        "homepage": "https://multidimension.al",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": ">=5.4.0",
+        "composer/installers": "~1.0.1",
+        "mediawiki/auth-remoteuser": ">=2.0.0"
+    },
+    "require-dev": {
+        "mediawiki/mediawiki-codesniffer": "*"
+    },
+    "scripts": {
+        "test": [
+            "phpcs -p -s"
+        ],
+        "fix": "phpcbf"
+    }
+}

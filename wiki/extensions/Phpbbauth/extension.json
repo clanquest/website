@@ -1,0 +1,31 @@
+{
+    "name": "phpBBAuth",
+    "version": "0.0.6",
+    "author": [
+        "[https://multidimension.al/ multidimension.al]"
+    ],
+    "url": "https://github.com/multidimension-al/phpbbauth",
+    "descriptionmsg": "phpbbauth-desc",
+    "license-name": "MIT",
+    "type": "mediawiki-extension",
+    "config": {
+        "_prefix": "wgPhpBBAuth",
+        "ForumDirectory": "./../phpBB3/"
+    },
+    "requires": {
+        "MediaWiki": ">= 1.27.0",
+        "extensions": {
+            "Auth_remoteuser": ">= 2.0.0"
+        }
+    },
+    "AutoloadClasses": {
+        "PhpbbAuthHooks": "PhpbbAuthHooks.php"
+    },
+    "Hooks": {
+        "PersonalUrls": "PhpbbAuthHooks::onPersonalUrls"
+    },
+    "MessagesDirs": {
+        "Phpbbauth": "i18n"
+    },
+    "manifest_version": 1
+}
