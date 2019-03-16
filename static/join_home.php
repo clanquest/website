@@ -39,10 +39,10 @@
 
 	<h2>Real World</h2>
 
-	<img src="/forums/styles/clanquest/images/join_brochure/runefest17.jpg" srcset="/forums/styles/clanquest/images/join_brochure/runefest17_2x.jpg 2x" alt="Clan Quest at RuneFest 2017">
+	<img src="/forums/styles/clanquest/images/join_brochure/runefest18.jpg" srcset="/forums/styles/clanquest/images/join_brochure/runefest18_2x.jpg 2x" alt="Clan Quest at RuneFest 2018">
 
 	<p>Clan Questers spend a lot of hours playing video games together and chatting on our 
-	forums and Discord server. As such some have even elected to meet other Clan Questers in real life!</p>
+	forums and <a href="https://discord.gg/ejWecQP">Discord server</a>. As such some have even elected to meet other Clan Questers in real life!</p>
 
 	<p>Whether it’s a small meetup in Atlanta or attending RuneFest, Clan Quest has regular meetups. 
 	Meetups are of course not mandatory but they are a joy to attend. Friendships made in Clan Quest true 
