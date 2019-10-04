@@ -1,16 +1,16 @@
 <div class="home-content">
 	<div class="main-content" id="hub">
 		<?php
-		$wiki_contents = file_get_contents('https://clanquest.org/wiki/api.php?action=parse&page=RuneFest_2018/News&prop=text&disableeditsection=true&format=json');
-		$json = json_decode($wiki_contents);
-		$news = $json->parse->text->{'*'};
+		// $wiki_contents = file_get_contents('https://clanquest.org/wiki/api.php?action=parse&page=RuneFest_2018/News&prop=text&disableeditsection=true&format=json');
+		// $json = json_decode($wiki_contents);
+		// $news = $json->parse->text->{'*'};
 
-		if (!empty($news)) {
-			echo '<h2>Announcements at RuneFest</h2>';
-			echo '<div class="wiki-include">';
-			echo $news;
-			echo '</div>';
-		}
+		// if (!empty($news)) {
+		// 	echo '<h2>Announcements at RuneFest</h2>';
+		// 	echo '<div class="wiki-include">';
+		// 	echo $news;
+		// 	echo '</div>';
+		// }
 		?>
 		
 		<div id="tweets">
