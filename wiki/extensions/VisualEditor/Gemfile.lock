@@ -71,7 +71,7 @@ GEM
       ast (~> 2.2)
     powerpack (0.1.1)
     rainbow (2.1.0)
-    rake (10.5.0)
+    rake (12.3.3)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -107,7 +107,7 @@ PLATFORMS
 DEPENDENCIES
   commons_upload (~> 1.0, >= 1.0.1)
   mediawiki_selenium (~> 1.8)
-  rake (~> 10.4, >= 10.4.2)
+  rake (~> 12.3)
   rubocop (~> 0.32.1)
 
 BUNDLED WITH
