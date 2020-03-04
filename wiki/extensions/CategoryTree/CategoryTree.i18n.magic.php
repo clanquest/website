@@ -6,7 +6,7 @@
  * @ingroup Extensions
  * @author Daniel Kinzler, brightbyte.de
  * @copyright © 2006-2008 Daniel Kinzler
- * @license GNU General Public Licence 2.0 or later
+ * @license GPL-2.0-or-later
  */
 
 $magicWords = [];
@@ -138,7 +138,8 @@ $magicWords['kw'] = [
 
 /** Ladino (Ladino) */
 $magicWords['lad'] = [
-	'categorytree' => [ 0, 'árvoledekateggorías', 'árboldecategorías', 'arboldecategorias', 'categorytree' ],
+	'categorytree' => [ 0, 'árvoledekateggorías', 'árboldecategorías', 'arboldecategorias',
+		'categorytree' ],
 ];
 
 /** Malagasy (Malagasy) */
@@ -233,7 +234,7 @@ $magicWords['uk'] = [
 
 /** Urdu (اردو) */
 $magicWords['ur'] = [
-	'categorytree' => [ 0, 'شجر_زمرہ' ],
+	'categorytree' => [ 0, 'شجرہ_زمرہ', 'شجر_زمرہ' ],
 ];
 
 /** Uzbek (oʻzbekcha/ўзбекча) */

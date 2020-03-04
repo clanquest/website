@@ -10,9 +10,11 @@
 }
 
 .ve-ui-mwSyntaxHighlightDialog-content .ve-ui-mwExtensionWindow-input textarea {
-	font-family: monospace, 'Courier';
+	/* T176636 */
+	font-family: monospace, monospace;
 }
 
-.ve-ui-mwSyntaxHighlightDialog-content .ve-ui-mwSyntaxHighlightWindow-languageField {
+.ve-ui-mwSyntaxHighlightDialog-content .ve-ui-mwSyntaxHighlightWindow-languageField,
+.ve-ui-mwSyntaxHighlightDialog-content .ve-ui-mwSyntaxHighlightWindow-startLineField {
 	max-width: 30em;
 }

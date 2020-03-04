@@ -1,5 +1,8 @@
 <?php
+
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\Database;
 
 /**
  * Gadgets repo powered by MediaWiki:Gadgets-definition
@@ -9,6 +12,12 @@ class MediaWikiGadgetsDefinitionRepo extends GadgetRepo {
 
 	private $definitionCache;
 
+	/**
+	 * @param string $id
+	 *
+	 * @return Gadget
+	 * @throws InvalidArgumentException
+	 */
 	public function getGadget( $id ) {
 		$gadgets = $this->loadGadgets();
 		if ( !isset( $gadgets[$id] ) ) {
@@ -27,11 +36,17 @@ class MediaWikiGadgetsDefinitionRepo extends GadgetRepo {
 		}
 	}
 
+	public function handlePageUpdate( LinkTarget $target ) {
+		if ( $target->getNamespace() == NS_MEDIAWIKI && $target->getText() == 'Gadgets-definition' ) {
+			$this->purgeDefinitionCache();
+		}
+	}
+
 	/**
 	 * Purge the definitions cache, for example if MediaWiki:Gadgets-definition
 	 * was edited.
 	 */
-	public function purgeDefinitionCache() {
+	private function purgeDefinitionCache() {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$cache->touchCheckKey( $this->getCheckKey() );
 	}
@@ -77,7 +92,9 @@ class MediaWikiGadgetsDefinitionRepo extends GadgetRepo {
 		$value = $wanCache->getWithSetCallback(
 			$key,
 			Gadget::CACHE_TTL,
-			function ( $old, &$ttl ) use ( $us ) {
+			function ( $old, &$ttl, &$setOpts ) use ( $us ) {
+				$setOpts += Database::getCacheSetOptions( wfGetDB( DB_REPLICA ) );
+
 				$now = microtime( true );
 				$gadgets = $us->fetchStructuredList();
 				if ( $gadgets === false ) {
@@ -103,7 +120,7 @@ class MediaWikiGadgetsDefinitionRepo extends GadgetRepo {
 	/**
 	 * Fetch list of gadgets and returns it as associative array of sections with gadgets
 	 * e.g. [ $name => $gadget1, etc. ]
-	 * @param $forceNewText String: Injected text of MediaWiki:gadgets-definition [optional]
+	 * @param string $forceNewText Injected text of MediaWiki:gadgets-definition [optional]
 	 * @return array|bool
 	 */
 	public function fetchStructuredList( $forceNewText = null ) {
@@ -135,7 +152,7 @@ class MediaWikiGadgetsDefinitionRepo extends GadgetRepo {
 	 * Generates a structured list of Gadget objects from a definition
 	 *
 	 * @param string $definition
-	 * @return array Array( name => Gadget )
+	 * @return Gadget[] List of Gadget objects indexed by the gadget's name.
 	 */
 	private function listFromDefinition( $definition ) {
 		$definition = preg_replace( '/<!--.*?-->/s', '', $definition );

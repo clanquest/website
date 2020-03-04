@@ -9,12 +9,12 @@
 		"Ori Livneh",
 		"Ed Sanders"
 	],
-	"url": "https://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi",
+	"url": "https://www.mediawiki.org/wiki/Extension:SyntaxHighlight",
 	"descriptionmsg": "syntaxhighlight-desc",
-	"license-name": "GPL-2.0+",
+	"license-name": "GPL-2.0-or-later",
 	"type": "parserhook",
 	"requires": {
-		"MediaWiki": ">= 1.27"
+		"MediaWiki": ">= 1.31"
 	},
 	"MessagesDirs": {
 		"SyntaxHighlight_GeSHi": [
@@ -22,22 +22,19 @@
 		]
 	},
 	"AutoloadClasses": {
-		"SyntaxHighlight_GeSHi": "SyntaxHighlight_GeSHi.class.php",
-		"GeSHi": "SyntaxHighlight_GeSHi.GeSHi.php",
-		"SyntaxHighlightAce": "SyntaxHighlight_GeSHi.ace.php",
-		"SyntaxHighlightGeSHiCompat": "SyntaxHighlight_GeSHi.compat.php",
-		"ResourceLoaderGeSHiVisualEditorModule": "ResourceLoaderGeSHiVisualEditorModule.php"
+		"SyntaxHighlight": "includes/SyntaxHighlight.php",
+		"SyntaxHighlight_GeSHi": "includes/SyntaxHighlight.php",
+		"GeSHi": "includes/GeSHi.php",
+		"SyntaxHighlightAce": "includes/SyntaxHighlightAce.php",
+		"SyntaxHighlightGeSHiCompat": "includes/SyntaxHighlightGeSHiCompat.php",
+		"ResourceLoaderSyntaxHighlightVisualEditorModule": "includes/ResourceLoaderSyntaxHighlightVisualEditorModule.php"
 	},
-	"ExtensionFunctions": [
-		"SyntaxHighlight_GeSHi::onSetup"
-	],
 	"ResourceFileModulePaths": {
 		"localBasePath": "modules",
 		"remoteExtPath": "SyntaxHighlight_GeSHi/modules"
 	},
 	"ResourceModules": {
 		"ext.pygments": {
-			"position": "top",
 			"targets": [
 				"desktop",
 				"mobile"
@@ -50,19 +47,16 @@
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [
-			"SyntaxHighlight_GeSHi::onParserFirstCallInit"
+			"SyntaxHighlight::onParserFirstCallInit"
 		],
 		"ContentGetParserOutput": [
-			"SyntaxHighlight_GeSHi::onContentGetParserOutput"
+			"SyntaxHighlight::onContentGetParserOutput"
 		],
 		"ApiFormatHighlight": [
-			"SyntaxHighlight_GeSHi::onApiFormatHighlight"
-		],
-		"RejectParserCacheValue": [
-			"SyntaxHighlight_GeSHi::onRejectParserCacheValue"
+			"SyntaxHighlight::onApiFormatHighlight"
 		],
 		"ResourceLoaderRegisterModules": [
-			"SyntaxHighlight_GeSHi::onResourceLoaderRegisterModules"
+			"SyntaxHighlight::onResourceLoaderRegisterModules"
 		]
 	},
 	"SyntaxHighlightModels": {
@@ -78,9 +72,5 @@
 	"TrackingCategories": [
 		"syntaxhighlight-error-category"
 	],
-	"ParserTestFiles": [
-		"tests/parserTests.txt"
-	],
-	"load_composer_autoloader": true,
 	"manifest_version": 1
 }

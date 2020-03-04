@@ -1,8 +1,8 @@
 /*!
  * VisualEditor MediaWiki Reference dialog tool classes.
  *
- * @copyright 2011-2017 Cite VisualEditor Team and others; see AUTHORS.txt
- * @license The MIT License (MIT); see LICENSE.txt
+ * @copyright 2011-2018 VisualEditor Team's Cite sub-team and others; see AUTHORS.txt
+ * @license MIT
  */
 
 /**
@@ -80,7 +80,7 @@ ve.ui.sequenceRegistry.register(
 );
 
 ve.ui.triggerRegistry.register(
-    'reference', { mac: new ve.ui.Trigger( 'cmd+shift+k' ), pc: new ve.ui.Trigger( 'ctrl+shift+k' ) }
+	'reference', { mac: new ve.ui.Trigger( 'cmd+shift+k' ), pc: new ve.ui.Trigger( 'ctrl+shift+k' ) }
 );
 
 ve.ui.commandHelpRegistry.register( 'insert', 'ref', {

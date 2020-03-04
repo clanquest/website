@@ -59,7 +59,8 @@
 								continue;
 							}
 							$group = context.modules.toolbar.$toolbar.find(
-								'div[rel="' + data.section + '"].section ' + 'div[rel="' + data.group + '"].group'
+								'div[rel="' + data.section + '"].section ' +
+								'div[rel="' + data.group + '"].group'
 							);
 							for ( tool in data[ type ] ) {
 								// Tool
@@ -96,7 +97,8 @@
 								continue;
 							}
 							$table = context.modules.toolbar.$toolbar.find(
-								'div[rel="' + data.section + '"].section ' + 'div[rel="' + data.page + '"].page table'
+								'div[rel="' + data.section + '"].section ' +
+								'div[rel="' + data.page + '"].page table'
 							);
 							for ( i = 0; i < data.rows.length; i++ ) {
 								// Row
@@ -109,16 +111,15 @@
 								continue;
 							}
 							$characters = context.modules.toolbar.$toolbar.find(
-								'div[rel="' + data.section + '"].section ' + 'div[rel="' + data.page + '"].page div'
+								'div[rel="' + data.section + '"].section ' +
+								'div[rel="' + data.page + '"].page div'
 							);
 							actions = $characters.data( 'actions' );
 							for ( i = 0; i < data.characters.length; i++ ) {
 								// Character
-								$characters
-								.append(
+								$characters.append(
 									$( $.wikiEditor.modules.toolbar.fn.buildCharacter( data.characters[ i ], actions ) )
 										.mousedown( function ( e ) {
-											context.fn.saveCursorAndScrollTop();
 											// No dragging!
 											e.preventDefault();
 											return false;
@@ -283,7 +284,7 @@
 				if ( label ) {
 					$label = $( '<span>' )
 						.addClass( 'label' )
-						.html( label );
+						.text( label );
 					$group.append( $label );
 				}
 				empty = true;
@@ -304,7 +305,7 @@
 				return $group;
 			},
 			buildTool: function ( context, id, tool ) {
-				var i, label, $button, offsetOrIcon, $select, $options,
+				var i, label, $button, icon, $select, $options, oouiButton,
 					option, optionLabel;
 				if ( 'filters' in tool ) {
 					for ( i = 0; i < tool.filters.length; i++ ) {
@@ -316,34 +317,47 @@
 				label = $.wikiEditor.autoMsg( tool, 'label' );
 				switch ( tool.type ) {
 					case 'button':
-						offsetOrIcon = $.wikiEditor.autoIconOrOffset(
-							tool.icon,
-							tool.offset,
-							$.wikiEditor.imgPath + 'toolbar/'
-						);
-						$button = $( '<a>' )
-							.attr( {
-								href: '#',
-								title: label,
-								rel: id,
-								role: 'button',
-								'class': 'tool tool-button'
-							} )
-							.text( label );
-						if ( typeof offsetOrIcon === 'object' ) {
-							$button
-							.addClass( 'wikiEditor-toolbar-spritedButton' )
-							.css( 'backgroundPosition', offsetOrIcon[ 0 ] + 'px ' + offsetOrIcon[ 1 ] + 'px' );
+						if ( tool.oouiIcon ) {
+							oouiButton = new OO.ui.ButtonWidget( {
+								framed: false,
+								classes: [ 'tool' ],
+								icon: tool.oouiIcon,
+								title: label
+							} );
+							$button = oouiButton.$element;
+							$button.attr( 'rel', id );
+							$button.data( 'ooui', oouiButton );
 						} else {
-							$button
-							.css( 'background-image', 'url(' + offsetOrIcon + ')' );
+							$button = $( '<a>' )
+								.attr( {
+									href: '#',
+									title: label,
+									rel: id,
+									role: 'button',
+									'class': 'tool tool-button'
+								} )
+								.text( label );
+							if ( tool.icon ) {
+								icon = $.wikiEditor.autoIcon(
+									tool.icon,
+									$.wikiEditor.imgPath + 'toolbar/'
+								);
+								$button.css( 'background-image', 'url(' + icon + ')' );
+							}
 						}
+						$button.data( 'setActive', function ( active ) {
+							$button.toggleClass( 'tool-active', active );
+
+							// OOUI button
+							if ( $button.data( 'ooui' ) ) {
+								$button.data( 'ooui' ).setFlags( { progressive: active } );
+							}
+						} );
 						if ( 'action' in tool ) {
 							$button
 								.data( 'action', tool.action )
 								.data( 'context', context )
 								.mousedown( function ( e ) {
-									context.fn.saveCursorAndScrollTop();
 									// No dragging!
 									e.preventDefault();
 									return false;
@@ -369,7 +383,6 @@
 										.data( 'action', tool.list[ option ].action )
 										.data( 'context', context )
 										.mousedown( function ( e ) {
-											context.fn.saveCursorAndScrollTop();
 											// No dragging!
 											e.preventDefault();
 											return false;
@@ -395,20 +408,20 @@
 						}
 						$select.append( $( '<div>' ).addClass( 'menu' ).append( $options ) );
 						$select.append( $( '<a>' )
-								.addClass( 'label' )
-								.text( label )
-								.data( 'options', $options )
-								.attr( 'href', '#' )
-								.mousedown( function ( e ) {
-									// No dragging!
-									e.preventDefault();
-									return false;
-								} )
-								.click( function ( e ) {
-									$( this ).data( 'options' ).animate( { opacity: 'toggle' }, 'fast' );
-									e.preventDefault();
-									return false;
-								} )
+							.addClass( 'label' )
+							.text( label )
+							.data( 'options', $options )
+							.attr( 'href', '#' )
+							.mousedown( function ( e ) {
+								// No dragging!
+								e.preventDefault();
+								return false;
+							} )
+							.click( function ( e ) {
+								$( this ).data( 'options' ).animate( { opacity: 'toggle' }, 'fast' );
+								e.preventDefault();
+								return false;
+							} )
 						);
 						return $select;
 					default:
@@ -422,7 +435,6 @@
 					.attr( 'rel', id )
 					.data( 'context', context )
 					.mousedown( function ( e ) {
-						context.fn.saveCursorAndScrollTop();
 						// No dragging!
 						e.preventDefault();
 						return false;
@@ -439,7 +451,6 @@
 							$( this ).attr( 'rel' ),
 							{ expires: 30, path: '/' }
 						);
-						context.fn.restoreCursorAndScrollTop();
 						// No dragging!
 						event.preventDefault();
 						return false;
@@ -500,7 +511,6 @@
 								.html( html )
 								.children()
 								.mousedown( function ( e ) {
-									context.fn.saveCursorAndScrollTop();
 									// No dragging!
 									e.preventDefault();
 									return false;
