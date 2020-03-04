@@ -2,7 +2,7 @@
 .full {
 	width: 530px;
 }
-.comments-body p { margin-bottom: 5px !important;}
+
 .reply {
 	margin-left: 70px !important;
 	width: 460px;
@@ -114,7 +114,7 @@ Besides, ny.css sets it back to 10px anyway, so this way everyone can be happy.
 }
 
 .c-form-title {
-	color: #fff;
+	color: #333;
 	font-weight: bold;
 	font-size: 17px;
 	margin: 0px 0px 5px 0px;
@@ -136,13 +136,18 @@ textarea#comment {
 	padding: 10px 0px 0px;
 }
 
+.c-order {
+	padding: 20px 0px;
+}
+
 .c-spy {
+	float: left;
 	font-size: 10px;
+	margin: 0px 0px 0px 10px;
 }
 
 .c-order-select {
-	display: flex;
-	flex-direction: column;
+	float: left;
 }
 
 /* Pager */

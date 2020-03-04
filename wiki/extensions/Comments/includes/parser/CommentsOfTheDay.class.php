@@ -5,29 +5,18 @@
  *
  * @file
  * @ingroup Extensions
- * @date 27 November 2015
  */
 
 class CommentsOfTheDay {
-
-	/**
-	 * Register the new <commentsoftheday /> parser hook with the Parser.
-	 *
-	 * @param Parser $parser Instance of Parser
-	 * @return bool
-	 */
-	public static function registerTag( &$parser ) {
-		$parser->setHook( 'commentsoftheday', array( __CLASS__, 'getHTML' ) );
-		return true;
-	}
 
 	/**
 	 * Get comments of the day -- five newest comments within the last 24 hours
 	 *
 	 * @return string HTML
 	 */
-	public static function getHTML( $input, $args, $parser ) {
-		$comments = self::get( (bool)$args['nocache'] );
+	public static function getParserHandler( $input, $args, $parser ) {
+		$skipCache = isset( $args['nocache'] ) && $args['nocache'];
+		$comments = self::get( $skipCache );
 		$commentOutput = '';
 
 		foreach ( $comments as $comment ) {
@@ -52,38 +41,37 @@ class CommentsOfTheDay {
 	 * @param array $whereConds WHERE conditions for the SQL clause (if not using the defaults)
 	 * @return array
 	 */
-	public static function get( $skipCache = false, $cacheTime = 86400, $whereConds = array() ) {
+	public static function get( $skipCache = false, $cacheTime = 86400, $whereConds = [] ) {
 		global $wgMemc;
 
 		// Try memcached first
-		$key = wfMemcKey( 'comments-of-the-day', 'standalone-hook-new' );
+		$key = $wgMemc->makeKey( 'comments-of-the-day', 'standalone-hook-new' );
 		$data = $wgMemc->get( $key );
 
 		if ( $data ) { // success, got it from memcached!
 			$comments = $data;
 		} elseif ( !$data || $skipCache ) { // just query the DB
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 
 			if ( empty( $whereConds ) ) {
-				$whereConds = array(
-					'comment_page_id = page_id',
-					'UNIX_TIMESTAMP(comment_date) > ' . ( time() - ( $cacheTime ) )
-				);
+				$whereConds = [
+					'Comment_Page_ID = page_id',
+					'UNIX_TIMESTAMP(Comment_Date) > ' . ( time() - ( $cacheTime ) )
+				];
 			}
 
 			$res = $dbr->select(
-				array( 'Comments', 'page' ),
-				array(
+				[ 'Comments', 'page' ],
+				[
 					'Comment_Username', 'Comment_IP', 'Comment_Text',
-					'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
-					'Comment_User_Id', 'CommentID', 'Comment_Parent_ID',
-					'Comment_Page_ID'
-				),
+					'Comment_Date', 'Comment_User_Id', 'CommentID',
+					'Comment_Parent_ID', 'Comment_Page_ID'
+				],
 				$whereConds,
 				__METHOD__
 			);
 
-			$comments = array();
+			$comments = [];
 
 			foreach ( $res as $row ) {
 				if ( $row->Comment_Parent_ID == 0 ) {
@@ -91,7 +79,7 @@ class CommentsOfTheDay {
 				} else {
 					$thread = $row->Comment_Parent_ID;
 				}
-				$data = array(
+				$data = [
 					'Comment_Username' => $row->Comment_Username,
 					'Comment_IP' => $row->Comment_IP,
 					'Comment_Text' => $row->Comment_Text,
@@ -102,14 +90,14 @@ class CommentsOfTheDay {
 					'CommentID' => $row->CommentID,
 					'Comment_Parent_ID' => $row->Comment_Parent_ID,
 					'thread' => $thread,
-					'timestamp' => $row->timestamp
-				);
+					'timestamp' => wfTimestamp( TS_UNIX, $row->Comment_Date )
+				];
 
 				$page = new CommentsPage( $row->Comment_Page_ID, new RequestContext() );
 				$comments[] = new Comment( $page, new RequestContext(), $data );
 			}
 
-			usort( $comments, array( 'CommentFunctions', 'sortCommentScore' ) );
+			usort( $comments, [ 'CommentFunctions', 'sortCommentScore' ] );
 			$comments = array_slice( $comments, 0, 5 );
 
 			$wgMemc->set( $key, $comments, $cacheTime );

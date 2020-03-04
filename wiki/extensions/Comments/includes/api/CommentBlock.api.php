@@ -9,11 +9,11 @@ class CommentBlockAPI extends ApiBase {
 		}
 
 		// Load user_name and user_id for person we want to block from the comment it originated from
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Comments',
-			array( 'comment_username', 'comment_user_id' ),
-			array( 'CommentID' => $this->getMain()->getVal( 'commentID' ) ),
+			[ 'comment_username', 'comment_user_id' ],
+			[ 'CommentID' => $this->getMain()->getVal( 'commentID' ) ],
 			__METHOD__
 		);
 		if ( $s !== false ) {
@@ -42,11 +42,11 @@ class CommentBlockAPI extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'commentID' => array(
+		return [
+			'commentID' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'integer'
-			)
-		);
+			]
+		];
 	}
 }

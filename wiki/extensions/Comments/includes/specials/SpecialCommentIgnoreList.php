@@ -93,13 +93,13 @@ class CommentIgnoreList extends SpecialPage {
 		$lang = $this->getLanguage();
 		$title = $this->getPageTitle();
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'Comments_block',
-			array( 'cb_user_name_blocked', 'cb_date' ),
-			array( 'cb_user_id' => $this->getUser()->getID() ),
+			[ 'cb_user_name_blocked', 'cb_date' ],
+			[ 'cb_user_id' => $this->getUser()->getID() ],
 			__METHOD__,
-			array( 'ORDER BY' => 'cb_user_name' )
+			[ 'ORDER BY' => 'cb_user_name' ]
 		);
 
 		if ( $dbr->numRows( $res ) > 0 ) {

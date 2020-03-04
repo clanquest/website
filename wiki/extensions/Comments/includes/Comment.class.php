@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Comment class
  * Functions for managing comments and everything related to them, including:
@@ -130,14 +133,14 @@ class Comment extends ContextSource {
 		if ( isset( $data['current_vote'] ) ) {
 			$vote = $data['current_vote'];
 		} else {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$row = $dbr->selectRow(
 				'Comments_Vote',
-				array( 'Comment_Vote_Score' ),
-				array(
+				[ 'Comment_Vote_Score' ],
+				[
 					'Comment_Vote_ID' => $this->id,
 					'Comment_Vote_Username' => $this->getUser()->getName()
-				),
+				],
 				__METHOD__
 			);
 			if ( $row !== false ) {
@@ -155,24 +158,24 @@ class Comment extends ContextSource {
 
 	public static function newFromID( $id ) {
 		$context = RequestContext::getMain();
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		if ( !is_numeric( $id ) || $id == 0 ) {
 			return null;
 		}
 
-		$tables = array();
-		$params = array();
-		$joinConds = array();
+		$tables = [];
+		$params = [];
+		$joinConds = [];
 
 		// Defaults (for non-social wikis)
 		$tables[] = 'Comments';
-		$fields = array(
+		$fields = [
 			'Comment_Username', 'Comment_IP', 'Comment_Text',
-			'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
+			'Comment_Date', 'Comment_Date AS timestamp',
 			'Comment_user_id', 'CommentID', 'Comment_Parent_ID',
 			'CommentID', 'Comment_Page_ID'
-		);
+		];
 
 		// If SocialProfile is installed, query the user_stats table too.
 		if (
@@ -181,18 +184,18 @@ class Comment extends ContextSource {
 		) {
 			$tables[] = 'user_stats';
 			$fields[] = 'stats_total_points';
-			$joinConds = array(
-				'Comments' => array(
+			$joinConds = [
+				'Comments' => [
 					'LEFT JOIN', 'Comment_user_id = stats_user_id'
-				)
-			);
+				]
+			];
 		}
 
 		// Perform the query
 		$res = $dbr->select(
 			$tables,
 			$fields,
-			array( 'CommentID' => $id ),
+			[ 'CommentID' => $id ],
 			__METHOD__,
 			$params,
 			$joinConds
@@ -205,7 +208,7 @@ class Comment extends ContextSource {
 		} else {
 			$thread = $row->Comment_Parent_ID;
 		}
-		$data = array(
+		$data = [
 			'Comment_Username' => $row->Comment_Username,
 			'Comment_IP' => $row->Comment_IP,
 			'Comment_Text' => $row->Comment_Text,
@@ -215,8 +218,8 @@ class Comment extends ContextSource {
 			'CommentID' => $row->CommentID,
 			'Comment_Parent_ID' => $row->Comment_Parent_ID,
 			'thread' => $thread,
-			'timestamp' => $row->timestamp
-		);
+			'timestamp' => wfTimestamp( TS_UNIX, $row->timestamp )
+		];
 
 		$page = new CommentsPage( $row->Comment_Page_ID, $context );
 
@@ -230,7 +233,7 @@ class Comment extends ContextSource {
 	 * @throws MWException
 	 */
 	function getText() {
-		global $wgParser;
+		$parser = MediaWikiServices::getInstance()->getParser();
 
 		$commentText = trim( str_replace( '&quot;', "'", $this->text ) );
 		$comment_text_parts = explode( "\n", $commentText );
@@ -240,25 +243,25 @@ class Comment extends ContextSource {
 		}
 
 		if ( $this->getTitle()->getArticleID() > 0 ) {
-			$commentText = $wgParser->recursiveTagParse( $comment_text_fix );
+			$commentText = $parser->recursiveTagParse( $comment_text_fix );
 		} else {
 			$commentText = $this->getOutput()->parse( $comment_text_fix );
 		}
 
 		// really bad hack because we want to parse=firstline, but don't want wrapping <p> tags
-		if ( substr( $commentText, 0 , 3 ) == '<p>' ) {
+		if ( substr( $commentText, 0, 3 ) == '<p>' ) {
 			$commentText = substr( $commentText, 3 );
 		}
 
-		if ( substr( $commentText, strlen( $commentText ) -4 , 4 ) == '</p>' ) {
-			$commentText = substr( $commentText, 0, strlen( $commentText ) -4 );
+		if ( substr( $commentText, strlen( $commentText ) - 4, 4 ) == '</p>' ) {
+			$commentText = substr( $commentText, 0, strlen( $commentText ) - 4 );
 		}
 
 		// make sure link text is not too long (will overflow)
 		// this function changes too long links to <a href=#>http://www.abc....xyz.html</a>
 		$commentText = preg_replace_callback(
 			"/(<a[^>]*>)(.*?)(<\/a>)/i",
-			array( 'CommentFunctions', 'cutCommentLinkText' ),
+			[ 'CommentFunctions', 'cutCommentLinkText' ],
 			$commentText
 		);
 
@@ -269,24 +272,24 @@ class Comment extends ContextSource {
 	 * Adds the comment and all necessary info into the Comments table in the
 	 * database.
 	 *
-	 * @param string $text: text of the comment
-	 * @param CommentsPage $page: container page
-	 * @param User $user: user commenting
-	 * @param int $parentID: ID of parent comment, if this is a reply
+	 * @param string $text text of the comment
+	 * @param CommentsPage $page container page
+	 * @param User $user user commenting
+	 * @param int $parentID ID of parent comment, if this is a reply
 	 *
-	 * @return Comment: the added comment
+	 * @return Comment the added comment
 	 */
 	static function add( $text, CommentsPage $page, User $user, $parentID ) {
 		global $wgCommentsInRecentChanges;
 		$dbw = wfGetDB( DB_MASTER );
 		$context = RequestContext::getMain();
 
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$commentDate = date( 'Y-m-d H:i:s' );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 		$dbw->insert(
 			'Comments',
-			array(
+			[
 				'Comment_Page_ID' => $page->id,
 				'Comment_Username' => $user->getName(),
 				'Comment_user_id' => $user->getId(),
@@ -294,7 +297,7 @@ class Comment extends ContextSource {
 				'Comment_Date' => $commentDate,
 				'Comment_Parent_ID' => $parentID,
 				'Comment_IP' => $_SERVER['REMOTE_ADDR']
-			),
+			],
 			__METHOD__
 		);
 		$commentId = $dbw->insertId();
@@ -306,7 +309,7 @@ class Comment extends ContextSource {
 		// Add a log entry.
 		self::log( 'add', $user, $page->id, $commentId, $text );
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		if (
 			class_exists( 'UserProfile' ) &&
 			$dbr->tableExists( 'user_stats' )
@@ -314,7 +317,7 @@ class Comment extends ContextSource {
 			$res = $dbr->select( // need this data for seeding a Comment object
 				'user_stats',
 				'stats_total_points',
-				array( 'stats_user_id' => $user->getId() ),
+				[ 'stats_user_id' => $user->getId() ],
 				__METHOD__
 			);
 
@@ -329,7 +332,7 @@ class Comment extends ContextSource {
 		} else {
 			$thread = $parentID;
 		}
-		$data = array(
+		$data = [
 			'Comment_Username' => $user->getName(),
 			'Comment_IP' => $context->getRequest()->getIP(),
 			'Comment_Text' => $text,
@@ -340,12 +343,12 @@ class Comment extends ContextSource {
 			'Comment_Parent_ID' => $parentID,
 			'thread' => $thread,
 			'timestamp' => strtotime( $commentDate )
-		);
+		];
 
 		$page = new CommentsPage( $page->id, $context );
 		$comment = new Comment( $page, $context, $data );
 
-		Hooks::run( 'Comment::add', array( $comment, $commentId, $comment->page->id ) );
+		Hooks::run( 'Comment::add', [ $comment, $commentId, $comment->page->id ] );
 
 		return $comment;
 	}
@@ -356,11 +359,11 @@ class Comment extends ContextSource {
 	 * @return string
 	 */
 	function getScore() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$row = $dbr->selectRow(
 			'Comments_Vote',
-			array( 'SUM(Comment_Vote_Score) AS CommentScore' ),
-			array( 'Comment_Vote_ID' => $this->id ),
+			[ 'SUM(Comment_Vote_Score) AS CommentScore' ],
+			[ 'Comment_Vote_ID' => $this->id ],
 			__METHOD__
 		);
 		$score = '0';
@@ -389,53 +392,40 @@ class Comment extends ContextSource {
 			$value = 0;
 		}
 
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$commentDate = date( 'Y-m-d H:i:s' );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 
 		if ( $this->currentVote === false ) { // no vote, insert
 			$dbw->insert(
 				'Comments_Vote',
-				array(
+				[
 					'Comment_Vote_id' => $this->id,
 					'Comment_Vote_Username' => $this->getUser()->getName(),
 					'Comment_Vote_user_id' => $this->getUser()->getId(),
 					'Comment_Vote_Score' => $value,
 					'Comment_Vote_Date' => $commentDate,
 					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
-				),
+				],
 				__METHOD__
 			);
 		} else { // already a vote, update
 			$dbw->update(
 				'Comments_Vote',
-				array(
+				[
 					'Comment_Vote_Score' => $value,
 					'Comment_Vote_Date' => $commentDate,
 					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
-				),
-				array(
+				],
+				[
 					'Comment_Vote_id' => $this->id,
 					'Comment_Vote_Username' => $this->getUser()->getName(),
 					'Comment_Vote_user_id' => $this->getUser()->getId(),
-				),
+				],
 				__METHOD__
 			);
 		}
 		$dbw->commit( __METHOD__ );
-
-		// update cache for comment list
-		// should perform better than deleting cache completely since Votes happen more frequently
-		$key = wfMemcKey( 'comment', 'pagethreadlist', $this->page->id );
-		$comments = $wgMemc->get( $key );
-		if ( $comments ) {
-			foreach ( $comments as &$comment ) {
-				if ( $comment->id == $this->id ) {
-					$comment->currentScore = $this->currentScore;
-				}
-			}
-			$wgMemc->set( $key, $comments );
-		}
 
 		$score = $this->getScore();
 
@@ -450,12 +440,12 @@ class Comment extends ContextSource {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete(
 			'Comments',
-			array( 'CommentID' => $this->id ),
+			[ 'CommentID' => $this->id ],
 			__METHOD__
 		);
 		$dbw->delete(
 			'Comments_Vote',
-			array( 'Comment_Vote_ID' => $this->id ),
+			[ 'Comment_Vote_ID' => $this->id ],
 			__METHOD__
 		);
 		$dbw->commit( __METHOD__ );
@@ -467,7 +457,7 @@ class Comment extends ContextSource {
 		$this->page->clearCommentListCache();
 
 		// Ping other extensions that may have hooked into this point (i.e. LinkFilter)
-		Hooks::run( 'Comment::delete', array( $this, $this->id, $this->page->id ) );
+		Hooks::run( 'Comment::delete', [ $this, $this->id, $this->page->id ] );
 	}
 
 	/**
@@ -487,9 +477,9 @@ class Comment extends ContextSource {
 		if ( $commentText !== null ) {
 			$logEntry->setComment( $commentText );
 		}
-		$logEntry->setParameters( array(
+		$logEntry->setParameters( [
 			'4::commentid' => $commentId
-		) );
+		] );
 		$logId = $logEntry->insert();
 		$logEntry->publish( $logId, ( $wgCommentsInRecentChanges ? 'rcandudp' : 'udp' ) );
 	}
@@ -522,11 +512,11 @@ class Comment extends ContextSource {
 
 			$voteLink .=
 				"<a href=\"" .
-				htmlspecialchars( $login->getLocalURL( array( 'returnto' => $returnTo ) ) ) .
+				htmlspecialchars( $login->getLocalURL( [ 'returnto' => $returnTo ] ) ) .
 				"\" rel=\"nofollow\">";
 		}
 
-		$imagePath = $wgExtensionAssetsPath . '/Comments/images';
+		$imagePath = $wgExtensionAssetsPath . '/Comments/resources/images';
 		if ( $voteType == 1 ) {
 			if ( $this->currentVote == 1 ) {
 				$voteLink .= "<img src=\"{$imagePath}/up-voted.png\" border=\"0\" alt=\"+\" /></a>";
@@ -654,7 +644,7 @@ class Comment extends ContextSource {
 	/**
 	 * Show the comment
 	 *
-	 * @param bool $hide: if true, comment is returned but hidden (display:none)
+	 * @param bool $hide if true, comment is returned but hidden (display:none)
 	 * @param $containerClass
 	 * @param $blockList
 	 * @param $anonList
@@ -734,7 +724,7 @@ class Comment extends ContextSource {
 				htmlspecialchars( $this->username, ENT_QUOTES ) .
 				'" data-comments-comment-id="' . $this->id . '" data-comments-user-id="' .
 				$this->userID . "\">
-					<img src=\"{$wgExtensionAssetsPath}/Comments/images/block.svg\" border=\"0\" alt=\"\"/>
+					<img src=\"{$wgExtensionAssetsPath}/Comments/resources/images/block.svg\" border=\"0\" alt=\"\"/>
 				</a>";
 		}
 
@@ -754,13 +744,13 @@ class Comment extends ContextSource {
 		$output .= "{$commentPoster}";
 		$output .= "<span class=\"c-user-level\">{$commentPosterLevel}</span> {$blockLink}" . "\n";
 
-		wfSuppressWarnings(); // E_STRICT bitches about strtotime()
+		MediaWiki\suppressWarnings(); // E_STRICT bitches about strtotime()
 		$output .= '<div class="c-time">' .
 			wfMessage(
 				'comments-time-ago',
 				CommentFunctions::getTimeAgo( strtotime( $this->date ) )
 			)->parse() . '</div>' . "\n";
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 
 		$output .= '<div class="c-score">' . "\n";
 		$output .= $this->getScoreHTML();
