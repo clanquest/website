@@ -5,7 +5,6 @@
  * @file
  * @ingroup Extensions
  */
-// @codingStandardsIgnoreFile
 
 $specialPageAliases = [];
 
@@ -360,6 +359,12 @@ $specialPageAliases['tt-cyrl'] = [
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = [
 	'Gadgets' => [ 'Додатки', 'Гаджеты' ],
+];
+
+/** Urdu (اردو) */
+$specialPageAliases['ur'] = [
+	'Gadgets' => [ 'آلات' ],
+	'GadgetUsage' => [ 'آلات_کا_استعمال' ],
 ];
 
 /** Venetian (vèneto) */

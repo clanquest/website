@@ -13,6 +13,8 @@ class ReCaptcha extends SimpleCaptcha {
 	/**
 	 * Displays the reCAPTCHA widget.
 	 * If $this->recaptcha_error is set, it will display an error in the widget.
+	 * @param int $tabIndex
+	 * @return array
 	 */
 	function getFormInformation( $tabIndex = 1 ) {
 		global $wgReCaptchaPublicKey, $wgReCaptchaTheme;
@@ -46,7 +48,7 @@ class ReCaptcha extends SimpleCaptcha {
 	 * Sets $this->recaptcha_error if the user is incorrect.
 	 * @param string $challenge Challenge value
 	 * @param string $response Response value
-	 * @return boolean
+	 * @return bool
 	 */
 	function passCaptcha( $challenge, $response ) {
 		global $wgReCaptchaPrivateKey, $wgRequest;
@@ -69,11 +71,10 @@ class ReCaptcha extends SimpleCaptcha {
 		$recaptcha_error = null;
 
 		return true;
-
 	}
 
 	/**
-	 * @param array $resultArr
+	 * @param array &$resultArr
 	 */
 	function addCaptchaAPI( &$resultArr ) {
 		$resultArr['captcha'] = $this->describeCaptchaType();
@@ -93,8 +94,8 @@ class ReCaptcha extends SimpleCaptcha {
 	}
 
 	/**
-	 * @param ApiBase $module
-	 * @param array $params
+	 * @param ApiBase &$module
+	 * @param array &$params
 	 * @param int $flags
 	 * @return bool
 	 */
@@ -160,7 +161,7 @@ class ReCaptcha extends SimpleCaptcha {
 	/**
 	 * @param array $requests
 	 * @param array $fieldInfo
-	 * @param array $formDescriptor
+	 * @param array &$formDescriptor
 	 * @param string $action
 	 */
 	public function onAuthChangeFormFields(

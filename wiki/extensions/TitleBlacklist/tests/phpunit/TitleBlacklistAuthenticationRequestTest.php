@@ -3,6 +3,9 @@
 use MediaWiki\Auth\AuthenticationRequestTestCase;
 use MediaWiki\Auth\AuthManager;
 
+/**
+ * @covers TitleBlacklistAuthenticationRequest
+ */
 class TitleBlacklistAuthenticationRequestTest extends AuthenticationRequestTestCase {
 	public function setUp() {
 		global $wgDisableAuthManager;
@@ -12,7 +15,7 @@ class TitleBlacklistAuthenticationRequestTest extends AuthenticationRequestTestC
 		parent::setUp();
 	}
 
-	protected function getInstance( array $args = [ ] ) {
+	protected function getInstance( array $args = [] ) {
 		return new TitleBlacklistAuthenticationRequest();
 	}
 
