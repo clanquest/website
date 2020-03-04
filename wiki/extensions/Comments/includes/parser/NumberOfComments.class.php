@@ -5,22 +5,12 @@ class NumberOfComments {
 	 * Registers NUMBEROFCOMMENTS and NUMPBEROFCOMMENTSPAGE as a valid magic word identifier.
 	 *
 	 * @param array $variableIds Array of valid magic word identifiers
-	 * @return bool
+	 * @return bool true
 	 */
-	public static function registerNumberOfCommentsMagicWord( &$variableIds ) {
+	public static function onMagicWordwgVariableIDs( &$variableIds ) {
 		$variableIds[] = 'NUMBEROFCOMMENTS';
 		$variableIds[] = 'NUMBEROFCOMMENTSPAGE';
-		return true;
-	}
 
-	/**
-	 * Hook to setup parser function
-	 *
-	 * @param Parser $parser
-	 * @return bool
-	 */
-	static function setupNumberOfCommentsPageParser( &$parser ) {
-		$parser->setFunctionHook( 'NUMBEROFCOMMENTSPAGE', 'NumberOfComments::getNumberOfCommentsPageParser', Parser::SFH_NO_HASH );
 		return true;
 	}
 
@@ -40,11 +30,11 @@ class NumberOfComments {
 	 * @param int $ret What to return to the user (in our case, the number of comments)
 	 * @return bool
 	 */
-	public static function getNumberOfCommentsMagic( &$parser, &$cache, &$magicWordId, &$ret ) {
+	public static function onParserGetVariableValueSwitch( &$parser, &$cache, &$magicWordId, &$ret ) {
 		global $wgMemc;
 
 		if ( $magicWordId == 'NUMBEROFCOMMENTS' ) {
-			$key = wfMemcKey( 'comments', 'magic-word' );
+			$key = $wgMemc->makeKey( 'comments', 'magic-word' );
 			$data = $wgMemc->get( $key );
 			if ( $data != '' ) {
 				// We have it in cache? Oh goody, let's just use the cached value!
@@ -56,11 +46,11 @@ class NumberOfComments {
 				$ret = $data;
 			} else {
 				// Not cached → have to fetch it from the database
-				$dbr = wfGetDB( DB_SLAVE );
+				$dbr = wfGetDB( DB_REPLICA );
 				$commentCount = (int)$dbr->selectField(
 					'Comments',
 					'COUNT(*) AS count',
-					array(),
+					[],
 					__METHOD__
 				);
 				wfDebugLog( 'Comments', 'Got the amount of comments from DB' );
@@ -72,7 +62,7 @@ class NumberOfComments {
 			}
 		} elseif ( $magicWordId == 'NUMBEROFCOMMENTSPAGE' ) {
 			$id = $parser->getTitle()->getArticleID();
-			$ret = NumberOfComments::getNumberOfCommentsPage( $id );
+			$ret = self::getNumberOfCommentsPage( $id );
 		}
 
 		return true;
@@ -85,7 +75,7 @@ class NumberOfComments {
 	 * @param string $pagename Page name
 	 * @return int Amount of comments on the given page
 	 */
-	static function getNumberOfCommentsPageParser( $parser, $pagename ) {
+	static function getParserHandler( $parser, $pagename ) {
 		$page = Title::newFromText( $pagename );
 
 		if ( $page instanceof Title ) {
@@ -94,7 +84,7 @@ class NumberOfComments {
 			$id = $parser->getTitle()->getArticleID();
 		}
 
-		return NumberOfComments::getNumberOfCommentsPage( $id );
+		return self::getNumberOfCommentsPage( $id );
 	}
 
 	/**
@@ -106,18 +96,18 @@ class NumberOfComments {
 	static function getNumberOfCommentsPage( $pageId ) {
 		global $wgMemc;
 
-		$key = wfMemcKey( 'comments', 'numberofcommentspage', $pageId );
+		$key = $wgMemc->makeKey( 'comments', 'numberofcommentspage', $pageId );
 		$cache = $wgMemc->get( $key );
 
 		if ( $cache ) {
 			$val = intval( $cache );
 		} else {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 
 			$res = $dbr->selectField(
 				'Comments',
 				'COUNT(*)',
-				array( 'Comment_Page_ID' => $pageId ),
+				[ 'Comment_Page_ID' => $pageId ],
 				__METHOD__
 			);
 
