@@ -95,7 +95,6 @@
 .home-content ul.event-list li {
 	font-size: 15px;
 	line-height: 1.5;
-	// height: 48px;
 	margin-bottom: 8px;
 }
 
@@ -134,10 +133,18 @@
 	margin-left: 1.5em;
 }
 .home-brochure {
-	font-size: 2em;
-	font-weight: 300;
+	font-size: 1.3em;
 	padding: 0 1em;
 	text-align: center;
 }
-.home-brochure h2 { font-weight: 300; }
-.home-brochure img { max-width: 100%; }
+.home-brochure h2 { color: #ECD77D; font-variant: small-caps; }
+.home-brochure img { max-width: 100%; object-fit: contain; }
+#our-guilds {
+    display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+}
+#our-guilds div {
+	width: 400px;
+	flex: 1 1 400px;
+}

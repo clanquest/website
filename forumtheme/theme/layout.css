@@ -242,6 +242,11 @@ html, body {
 .header-banner-large {
 	height: 350px;
 }
+@media all and (max-width: 450px) {
+	.header-banner-large {
+		height: 275px;
+	}
+}
 
 .header-banner-content {
 	height: 100%;

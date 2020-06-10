@@ -1,41 +1,42 @@
-<div class="home-brochure">
+<article class="home-brochure">
 	<p>Clan Quest is an online community, originally created for players who enjoy 
 	the lore and quests of RuneScape, and has since branched out with members in 
 	over 30 countries. It organizes its members into <a href="https://clanquest.org/wiki/Guilds" target="_blank">Guilds</a>, centered around different 
 	games and interests, that comprise <a href="https://clanquest.org/wiki/Clan_Quest" target="_blank">Clan Quest</a> as a whole. Clan Quest members 
 	enjoy questing and lore, providing help with difficult aspects of games, 
 	and making terrible puns.</p>
-
-	<!-- <div id="guild-images">
-		<img src="/forums/styles/clanquest/images/join_brochure/OS_Guild.jpg" srcset="/forums/styles/clanquest/images/join_brochure/OS_Guild_2x.jpg 2x" alt="Old School RuneScape Guild"> 
-		<img src="/forums/styles/clanquest/images/join_brochure/RS_Guild.jpg" srcset="/forums/styles/clanquest/images/join_brochure/RS_Guild_2x.jpg 2x" alt="RuneScape Guild"> 
-		<img src="/forums/styles/clanquest/images/join_brochure/RL_Guild.jpg" srcset="/forums/styles/clanquest/images/join_brochure/RL_Guild_2x.jpg 2x" alt="Rocket League Guild">
-	</div> -->
 	
-	<img src="https://clanquest.org/wiki/images/8/88/Clan_RuneScape_Old_Logo_003.png" width="300">
-	<h2>RuneScape</h2>
-	<p>Since 2009 the "Quest Noobs" of Clan Quest have played RuneScape. Its members 
-	are frequently recognized by Jagex, have had many pieces of suggested content added 
-	in game and have had multiple Jagex employees in our community. Clan Quest unites 
-	people who are passionate about RuneScape, its lore, and writing the guides others read.</p>
+	<div id="our-guilds">
+		<div id="rs3">
+		<img src="https://clanquest.org/wiki/images/8/88/Clan_RuneScape_Old_Logo_003.png" height="100">
+		<p>Since 2009 the "Quest Noobs" of Clan Quest have played RuneScape. Its members 
+		are frequently recognized by Jagex, have had many pieces of suggested content added 
+		in game and have had multiple Jagex employees in our community. Clan Quest unites 
+		people who are passionate about RuneScape, its lore, and writing the guides others read.</p>
+		</div>
 
-	<img src="https://cdn.discordapp.com/attachments/181007354555269121/704824208424960090/clanquest-2.png" width="300">
-	<h2>Old School RuneScape</h2>
-	<p>The Old School RuneScape (OSRS) Guild is composed of players who prefer a more classic 
-	Runescape experience. This Guild is for those questers who enjoy Dragon Slayer 2, Monkey Madness 2, 
-	and all the quests again in a 2007 style package. If you like the “original version” of RuneScape 
-	check out the OSRS Guild, where its members are almost as opinionated as awesome.</p>
+		<div id="os">
+		<img src="https://cdn.discordapp.com/attachments/181007354555269121/704824208424960090/clanquest-2.png" height="100">
+		<p>The Old School RuneScape (OSRS) Guild is composed of players who prefer a more classic 
+		Runescape experience. This Guild is for those questers who enjoy Dragon Slayer 2, Monkey Madness 2, 
+		and all the quests again in a 2007 style package. If you like the “original version” of RuneScape 
+		check out the OSRS Guild, where its members are almost as opinionated as awesome.</p>
+		</div>
 
-	<img src="https://clanquest.org/wiki/images/7/7f/Logo_Center.png" width="300">
-	<p>Members of our Rocket League Guild love playing soccer with their cars. Clan Quest isn’t all 
-	about lore, we love our fast paced games too! They play both casual and competitive and are always 
-	looking for new members. All we are going to say is, “GGOOOOAAAALLLLLL!!!”</p>
+		<div id="rl">
+		<img src="https://clanquest.org/wiki/images/7/7f/Logo_Center.png" height="100">
+		<p>Members of our Rocket League Guild love playing soccer with their cars. Clan Quest isn’t all 
+		about lore, we love our fast paced games too! They play both casual and competitive and are always 
+		looking for new members. All we are going to say is, “GGOOOOAAAALLLLLL!!!”</p>
+		</div>
 
-	<img src="https://clanquest.org/wiki/images/7/7f/Logo_Center.png" width="300">
-	<p>Like Clan Quest? Like RuneScape? Are you an Ironman? Then the RuneScape 3 Ironman Guild is 
-	for you. The Guild is tailored specifically for players who play the Ironman mode including group 
-	PvM and Questing.</p>
-
+		<div id="im">
+		<img src="https://clanquest.org/wiki/images/7/7f/Logo_Center.png" height="100">
+		<p>Like Clan Quest? Like RuneScape? Are you an Ironman? Then the RuneScape 3 Ironman Guild is 
+		for you. The Guild is tailored specifically for players who play the Ironman mode including group 
+		PvM and Questing.</p>
+		</div>
+	</div>
 	<h2>Our Meetups</h2>
 
 	<img src="/forums/styles/clanquest/images/join_brochure/cq_irl.jpg" srcset="/forums/styles/clanquest/images/join_brochure/cq_irl_2x.jpg 2x" alt="Our Meetups in Person">
@@ -62,4 +63,4 @@
 
 	<img src="/forums/styles/clanquest/images/cq_shield.png" srcset="/forums/styles/clanquest/images/cq_shield_2x.png 2x" alt="Clan Quest">
 
-</div>
+</article>
