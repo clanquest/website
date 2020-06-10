@@ -12,15 +12,15 @@
 		<img src="/forums/styles/clanquest/images/join_brochure/RL_Guild.jpg" srcset="/forums/styles/clanquest/images/join_brochure/RL_Guild_2x.jpg 2x" alt="Rocket League Guild">
 	</div> -->
 	
-	<img src="https://clanquest.org/wiki/images/7/7f/Logo_Center.png" width="300">
-
+	<img src="https://clanquest.org/wiki/images/8/88/Clan_RuneScape_Old_Logo_003.png" width="300">
+	<h2>RuneScape</h2>
 	<p>Since 2009 the "Quest Noobs" of Clan Quest have played RuneScape. Its members 
 	are frequently recognized by Jagex, have had many pieces of suggested content added 
 	in game and have had multiple Jagex employees in our community. Clan Quest unites 
 	people who are passionate about RuneScape, its lore, and writing the guides others read.</p>
 
-	<img src="https://clanquest.org/wiki/images/7/7f/Logo_Center.png" width="300">
-
+	<img src="https://cdn.discordapp.com/attachments/181007354555269121/704824208424960090/clanquest-2.png" width="300">
+	<h2>Old School RuneScape</h2>
 	<p>The Old School RuneScape (OSRS) Guild is composed of players who prefer a more classic 
 	Runescape experience. This Guild is for those questers who enjoy Dragon Slayer 2, Monkey Madness 2, 
 	and all the quests again in a 2007 style package. If you like the “original version” of RuneScape 
