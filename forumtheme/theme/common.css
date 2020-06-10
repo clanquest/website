@@ -144,13 +144,17 @@ ul.topiclist li.row dl dt .list-inner {
 	max-height: 1.3em;
 	max-width: 1.3em;
 }
-
+#page-body { 
+	font-size: 12px;
+	line-height: 1.6em;
+}
 body#wiki .toc {
 	display: table;
 	padding: 7px;
 }
 	body#wiki .toc ul {
 		margin-left: 2em;
+		margin-bottom: 0 !important;
 	}
 	body#wiki .toc ul ul {
 		margin-left: 1em;
@@ -160,6 +164,7 @@ body#wiki #page-body .toctitle h2 {
 	font-size: 1.5em;
 	margin-top: 0;
 }
+body#wiki #content { font-size: 1.3em; }
 body#wiki .wikitable { margin: 0 0 2em 0; }
 body#wiki .wikitable th {
 	font-weight: 400;
@@ -169,9 +174,6 @@ body#wiki .wikitable td { padding: 5px; }
 body#wiki .mw-datatable { width: 100%; }
 body#wiki .listfiles_nav { margin: 0 auto 20px; }
 body#wiki .listfiles_nav td { text-align: center; }
-body#wiki #page-body {
-	font-size: 1.3em;
-}
 body#wiki #page-body h1 {
 	color: red;
 }
@@ -203,6 +205,9 @@ body#wiki #page-body p {
 }
 body#wiki #page-body ul, body#wiki #page-body ol {
 	margin-left: 1.5em;
+}
+body#wiki #page-body *:not(li) > ul { 
+	margin-bottom: 1.5em;
 }
 body#wiki fieldset {
 	margin: 1em 0 1em 0;

@@ -93,3 +93,7 @@ blockquote cite:before {
 .topiclist dl.icon {
 	background-size: auto 32px;
 }
+
+dl.icon dt .list-inner {
+	padding-left: 50px;
+}
