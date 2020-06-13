@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"simplechanges": "ПростыеИзменения",
+	"simplechanges-desc": "Спецстраница, которая отображает упрощённый список последних изменений",
+	"simplechanges-summary": "Простое отображение последних изменений.",
+	"simplechanges-contentnamespace": "Пространство имён содержимого:"
+}

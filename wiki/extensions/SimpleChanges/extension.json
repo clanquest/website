@@ -1,0 +1,43 @@
+{
+	"name": "SimpleChanges",
+	"version": "1.1",
+	"author": [
+		"[https://www.mediawiki.org/wiki/User:Tosfos Ike Hecht]"
+	],
+	"type": "specialpage",
+	"url": "https://www.mediawiki.org/wiki/Extension:SimpleChanges",
+	"descriptionmsg": "simplechanges-desc",
+	"license-name": "GPL-2.0-or-later",
+	"requires": {
+		"MediaWiki": ">= 1.29.0"
+	},
+	"AutoloadClasses": {
+		"SpecialSimpleChanges": "SpecialSimpleChanges.php"
+	},
+	"MessagesDirs": {
+		"SimpleChanges": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"SimpleChangesAlias": "SimpleChanges.alias.php"
+	},
+	"SpecialPages": {
+		"SimpleChanges": "SpecialSimpleChanges"
+	},
+	"config": {
+		"SimpleChangesOnlyContentNamespaces": {
+			"value": false,
+			"description": "Restrict list of changes to $wgContentNamespaces?"
+		},
+		"SimpleChangesOnlyLatest": {
+			"value": true,
+			"description": "Show only the changes which are each page's most recent revisions. Avoids duplicate page titles."
+		},
+		"SimpleChangesShowUser": {
+			"value": false,
+			"description": "Show the user who made the change."
+		}
+	},
+	"manifest_version": 2
+}

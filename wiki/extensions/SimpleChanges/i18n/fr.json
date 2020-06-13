@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"simplechanges": "Modifications simples",
+	"simplechanges-desc": "Page spéciale qui affiche une liste des modifications récentes de barebones",
+	"simplechanges-summary": "Affichage simple des modifications récentes.",
+	"simplechanges-contentnamespace": "Espace de noms du contenu :"
+}

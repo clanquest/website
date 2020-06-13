@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ата"
+		]
+	},
+	"simplechanges": "SimpleChanges",
+	"simplechanges-desc": "Спеціальна сторінка, яка відображає вижимки з Недавніх редагувань",
+	"simplechanges-summary": "Просте відображення недавніх змін.",
+	"simplechanges-contentnamespace": "Простір назв вмісту:"
+}

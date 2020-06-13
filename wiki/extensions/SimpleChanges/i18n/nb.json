@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"simplechanges": "Enkle endringer",
+	"simplechanges-desc": "Sesialsider som viser en veldig enkel liste over siste endringer",
+	"simplechanges-summary": "Enkel visning av siste endringer.",
+	"simplechanges-contentnamespace": "Innholdsnavnerom:"
+}
