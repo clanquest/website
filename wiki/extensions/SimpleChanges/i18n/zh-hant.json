@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly",
+			"Laundry Machine"
+		]
+	},
+	"simplechanges": "簡易變更",
+	"simplechanges-desc": "顯示準系統近期變更的特殊頁面",
+	"simplechanges-summary": "最近變更的簡易顯示。",
+	"simplechanges-contentnamespace": "內容名稱空間："
+}

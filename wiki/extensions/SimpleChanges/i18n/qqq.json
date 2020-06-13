@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ike Hecht",
+			"Shirayuki",
+			"Umherirrender"
+		]
+	},
+	"simplechanges": "{{doc-special|SimpleChanges}}",
+	"simplechanges-desc": "{{desc|name=Simple Changes|url=https://www.mediawiki.org/wiki/Extension:SimpleChanges}}",
+	"simplechanges-summary": "Summary of [[Special:SimpleChanges]].",
+	"simplechanges-contentnamespace": "Displayed in the namespace form instead of {{msg-mw|Namespace}} when extension set to only display content namespaces (<code>$wgSimpleChangesOnlyContentNamespaces</code>)."
+}
