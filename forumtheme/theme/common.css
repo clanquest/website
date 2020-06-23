@@ -322,3 +322,29 @@ sup.reference {
 	vertical-align: super;
 	font-size: 80%;
 }
+
+ul.mw-search-results {
+	list-style-type: none;
+}
+
+ul.mw-search-results li {
+    margin-bottom: 1em;
+}
+
+.oo-ui-icon-search {
+	background: url("./images/wiki-search.png") no-repeat center center !important;
+}
+.oo-ui-indicator-clear {
+	background: url("./images/wiki-clear.png") no-repeat center center !important;
+}
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.oo-ui-icon-search {
+		background: url("./images/wiki-search-2x.png") no-repeat center center !important;
+		background-size: 20px 20px !important;
+	}
+
+	.oo-ui-indicator-clear {
+		background: url("./images/wiki-clear-2x.png") no-repeat center center !important;
+		background-size: 12px 12px !important;
+	}
+}
