@@ -256,7 +256,6 @@ body#wiki .catlinks-allhidden {
 		display: none;
 }
 body#wiki .search-types ul li {
-	float: left;
 	list-style: none;
 	margin-right: 10px;
 }
@@ -323,11 +322,35 @@ sup.reference {
 	font-size: 80%;
 }
 
-ul.mw-search-results {
+/* wiki search */
+body#wiki .results-info {
+	margin-top: 0.5em;
+}
+
+body#wiki .search-types {
+    background-color: #191919;
+    border: 1px solid #333;
+	border-radius: 2px;
+	margin: 1em 0;
+}
+body#wiki .search-types ul {
+	display: flex;
+	margin: 0 !important;
+	padding: 15px;
+}
+body#wiki .search-types li.current a {
+    color: #fff;
+	cursor: auto;
+}
+body#wiki .search-types li.current a:hover {
+	text-decoration: none;
+} 
+
+body#wiki ul.mw-search-results {
 	list-style-type: none;
 }
 
-ul.mw-search-results li {
+body#wiki ul.mw-search-results li {
     margin-bottom: 1em;
 }
 
