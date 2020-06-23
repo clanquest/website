@@ -360,6 +360,9 @@ body#wiki ul.mw-search-results li {
 .oo-ui-indicator-clear {
 	background: url("./images/wiki-clear.png") no-repeat center center !important;
 }
+.postedit:after { 
+	background: url("./images/wiki-close.png") no-repeat center center !important;
+}
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	.oo-ui-icon-search {
 		background: url("./images/wiki-search-2x.png") no-repeat center center !important;
@@ -368,6 +371,11 @@ body#wiki ul.mw-search-results li {
 
 	.oo-ui-indicator-clear {
 		background: url("./images/wiki-clear-2x.png") no-repeat center center !important;
+		background-size: 12px 12px !important;
+	}
+
+	.postedit:after { 
+		background: url("./images/wiki-close.png") no-repeat center center !important;
 		background-size: 12px 12px !important;
 	}
 }
