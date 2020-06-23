@@ -126,15 +126,24 @@ li.row:hover dd {
 }
 
 .boon, body#wiki .toc, body#wiki .wikitable, body#wiki .catlinks, 
-	body#wiki #preferences, body#wiki .mw-datatable, body#wiki .listfiles_nav {
+	body#wiki #preferences, body#wiki .mw-datatable, body#wiki .listfiles_nav, body#wiki .mw_metadata,
+	#filetoc {
 	border: 1px solid #191919;
 	box-shadow: 0 0 0 4px #222, 0 0 0 5px #191919;
 }
 .boon .inner, body#wiki .toc, body#wiki .wikitable, body#wiki .catlinks, 
-	body#wiki #preferences, body#wiki .mw-datatable, body#wiki .listfiles_nav, body#wiki #page-body .box {
+	body#wiki #preferences, body#wiki .mw-datatable, body#wiki .listfiles_nav, body#wiki #page-body .box,
+	body#wiki .mw_metadata th, body#wiki .mw_metadata td {
 	background: #191919;
 }
-body#wiki .wikitable th { border-bottom: 1px solid #000; }
+#filetoc { 
+	background: #191919 !important;
+	border: none !important;
+}
+body#wiki .mw_metadata td, body#wiki .mw_metadata th {
+	border: none !important;
+}
+body#wiki .wikitable th, body#wiki .mw_metadata th { border-bottom: 1px solid #000; }
 .boon h3 {
 	border-bottom: 1px solid #222;
 }

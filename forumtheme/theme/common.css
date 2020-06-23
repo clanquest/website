@@ -165,7 +165,7 @@ body#wiki #page-body .toctitle h2 {
 	margin-top: 0;
 }
 body#wiki #content { font-size: 1.3em; }
-body#wiki .wikitable { margin: 0 0 2em 0; }
+body#wiki .wikitable, body#wiki .mw_metadata { margin: 0.5em 0 2em 0; }
 body#wiki .wikitable th {
 	font-weight: 400;
 	padding: 5px;
