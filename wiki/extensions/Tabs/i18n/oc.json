@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cedric31"
+		]
+	},
+	"tabs-tab-label": "Onglet $1",
+	"tabs-toggle-open": "Afichar lo contengut",
+	"tabs-toggle-close": "Amagar lo contengut",
+	"tabs-dropdown-label": "Afichar la lista desenrotlanta"
+}

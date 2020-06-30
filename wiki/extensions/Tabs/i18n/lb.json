@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"tabs-desc": "Setzt Tagen <code>&lt;tabs&gt;</code> an <code>&lt;tab&gt;</code> dobäi fir weider Tabben unzeleeën",
+	"tabs-tab-label": "Tab $1",
+	"tabs-toggle-open": "Inhalter weisen",
+	"tabs-toggle-close": "Inhalter verstoppen",
+	"tabs-dropdown-label": "Dropdown weisen"
+}

@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Revi"
+		]
+	},
+	"tabs-tab-label": "탭 $1",
+	"tabs-toggle-open": "내용 보기",
+	"tabs-toggle-close": "내용 숨기기"
+}

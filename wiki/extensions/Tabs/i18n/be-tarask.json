@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Red Winged Duck"
+		]
+	},
+	"tabs-desc": "Дадае тэгі <code>&lt;tabs&gt;</code> і <code>&lt;tab&gt;</code> для стварэньня разьметкі з укладкамі",
+	"tabs-tab-label": "Укладка $1",
+	"tabs-toggle-open": "Паказаць зьмест",
+	"tabs-toggle-close": "Схаваць зьмест",
+	"tabs-dropdown-label": "Паказаць выпадны сьпіс"
+}

@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lokal Profil"
+		]
+	},
+	"tabs-desc": "Lägger till <code>&lt;tabs&gt;</code>- och <code>&lt;tab&gt;</code>-taggar för att skapa fliklayout.",
+	"tabs-tab-label": "Flik $1",
+	"tabs-toggle-open": "Visa innehåll",
+	"tabs-toggle-close": "Dölj innehåll",
+	"tabs-dropdown-label": "Visa rullgardinsmenyn"
+}

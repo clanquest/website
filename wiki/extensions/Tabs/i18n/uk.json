@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ата"
+		]
+	},
+	"tabs-desc": "Додає теги <code>&lt;tabs&gt;</code> і <code>&lt;tab&gt;</code> для створення розмітки з вкладками.",
+	"tabs-tab-label": "Вкладка $1",
+	"tabs-toggle-open": "Показати вміст",
+	"tabs-toggle-close": "Приховати вміст",
+	"tabs-dropdown-label": "Показати випадний список"
+}

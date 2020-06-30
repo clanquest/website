@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vitorvicentevalente",
+			"Hamilton Abreu"
+		]
+	},
+	"tabs-desc": "Acrescenta as etiquetas <code>&lt;tabs&gt;</code> e <code>&lt;tab&gt;</code> para criação de separadores.",
+	"tabs-tab-label": "Separador $1",
+	"tabs-toggle-open": "Mostrar conteúdo",
+	"tabs-toggle-close": "Ocultar conteúdo",
+	"tabs-dropdown-label": "Mostrar menu descendente"
+}

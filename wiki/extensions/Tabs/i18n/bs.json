@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Srdjan m"
+		]
+	},
+	"tabs-desc": "Dodaje oznake <code>&lt;tabs&gt;</code> i <code>&lt;tab&gt;</code> za pravljenje rasporeda u obliku kartica.",
+	"tabs-tab-label": "Kartica $1",
+	"tabs-toggle-open": "Prikaži sadržaj",
+	"tabs-toggle-close": "Sakrij sadržaj",
+	"tabs-dropdown-label": "Prikaži padajući meni"
+}
