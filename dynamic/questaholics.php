@@ -53,6 +53,8 @@ $colors = array(
 	"FFFF00",
 );
 
+
+
 function update_array_key($key, $value, &$arr) {
 	if(!array_key_exists($key, $arr)) {
 		$arr[$key] = array();
@@ -69,8 +71,25 @@ function get_icons_for_skill($skill, $icons) {
 	return $res;
 }
 
-$start_date = "2020-05-21";
-$end_date = "2020-05-28";
+$start_date = NULL;
+$end_date = NULL;
+
+if (isset($_GET["start"])) {
+	$start_date = htmlspecialchars($_GET["start"]);
+}
+if (isset($_GET["end"])) {
+	$end_date = htmlspecialchars($_GET["end"]);
+}
+
+if (is_null($start_date) || is_null($end_date)) {
+	die("Must supply both start and end as query parameters.");
+}
+
+$date_regexp = "/\d{4}-\d{2}-\d{2}/";
+if (preg_match($date_regexp, $start_date) === 0 || preg_match($date_regexp, $end_date) === 0) {
+	die("Dates must be of the form YYYY-MM-DD");
+}
+
 $line_regexp = "/(?P<user>\w*) - (?P<level>\d+m?) (?P<skill>[^,]*)/";
 $url = "https://update.rsbandb.com/highscores_achievements.php?start=$start_date&end=$end_date&clan=4";
 $raw_data = file_get_contents($url);
@@ -79,7 +98,6 @@ if ($raw_data === false) {
 	die("Could not fetch data from RSB&B. Please try again later.\n");
 }
 
-# Set up my data structures
 $cheevs = array(
 	"99" => array(),
 	"120" => array(),
@@ -93,7 +111,6 @@ foreach ($lines as $line) {
 }
 
 
-echo "<code>";
 foreach($cheevs as $level => $skills) {
 	shuffle($colors);
 	echo "[table][row][column]";
@@ -110,4 +127,3 @@ foreach($cheevs as $level => $skills) {
 	}
 	echo "[/column][/row][/table]";
 }
-echo "</code>";
