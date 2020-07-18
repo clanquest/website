@@ -32,6 +32,27 @@ $skill_icons = array(
 	"Archaeology" => "https://clanquest.org/wiki/images/1/12/Archicon.jpg",
 );
 
+$colors = array(
+	"808000",
+	"0080FF",
+	"00BF00",
+	"00FF00",
+	"00FFFF",
+	"40FF00",
+	"8080BF",
+	"80FFFF",
+	"BF0000",
+	"FF0000",
+	"FF4080",
+	"FF40FF",
+	"FF8000",
+	"FF8040",
+	"FFBF00",
+	"FFBF00",
+	"FFBFFF",
+	"FFFF00",
+);
+
 function update_array_key($key, $value, &$arr) {
 	if(!array_key_exists($key, $arr)) {
 		$arr[$key] = array();
@@ -71,14 +92,17 @@ foreach ($lines as $line) {
 	update_array_key($line["skill"], $line["user"], $cheevs[$line["level"]]);
 }
 
+
 echo "<code>";
 foreach($cheevs as $level => $skills) {
+	shuffle($colors);
 	echo "[table][row][column]";
 	$idx = 0;
 
 	foreach($skills as $skill => $users) {
+		$color = $colors[$idx%count($colors)];
 		$idx++;
-		echo "$level [img]". join("[/img][img]", get_icons_for_skill($skill, $skill_icons)) ."[/img]:" . join(", ", $users) . "<br>";
+		echo "$level [img]". join("[/img][img]", get_icons_for_skill($skill, $skill_icons)) ."[/img]:[color=#$color]" . join(", ", $users) . "[/color]<br>";
 
 		if($idx === (int)floor(count($skills)/2)) {
 			echo "[/column][column]";
