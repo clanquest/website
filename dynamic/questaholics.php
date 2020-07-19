@@ -1,5 +1,38 @@
 <?php
 
+header('Content-type: application/json');
+
+// Initialize the phpbb connection
+try {
+	$cfg = (require_once('./includes/config.php'));
+} catch (Exception $e) {
+	die('Could not load config file. Please ensure includes/config.php exists.');
+}
+
+define('IN_PHPBB', true);
+define('MAIN_SITE', true);
+
+if (!defined('IN_PHPBB')) {
+	exit();
+}
+
+// phpbb session setup, include common.php for access to database
+$phpEx = "php";
+$phpbb_root_path = (defined('PHPBB_ROOT_PATH'))
+	? PHPBB_ROOT_PATH
+	: $cfg['phpbb_root_path'] . '/';
+require_once($phpbb_root_path . 'common.' . $phpEx);
+require_once($phpbb_root_path . 'includes/functions_user.' . $phpEx);
+
+
+if ($user->data['user_id'] == ANONYMOUS) {
+	http_response_code(404);
+	die();
+} elseif (!group_memberships(23, $user->data['user_id'], true)) {
+	http_response_code(403);
+	die();
+}
+
 $skill_icons = array(
 	"XP" => "http://i.imgur.com/e9Scoyr.png?1",
 	"Attack" => "http://i.imgur.com/aIlGWj7.png?1",
