@@ -54,7 +54,6 @@ $colors = array(
 );
 
 
-
 function update_array_key($key, $value, &$arr) {
 	if(!array_key_exists($key, $arr)) {
 		$arr[$key] = array();
@@ -121,7 +120,7 @@ foreach($cheevs as $level => $skills) {
 		$idx++;
 		echo "$level [img]". join("[/img][img]", get_icons_for_skill($skill, $skill_icons)) ."[/img]:[color=#$color]" . join(", ", $users) . "[/color]<br>";
 
-		if($idx === (int)floor(count($skills)/2)) {
+		if($idx === (int)ceil(count($skills)/2)) {
 			echo "[/column][column]";
 		}
 	}
