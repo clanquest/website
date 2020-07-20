@@ -103,15 +103,8 @@ function get_icons_for_skill($skill, $icons) {
 	return $res;
 }
 
-$start_date = NULL;
-$end_date = NULL;
-
-if (isset($_GET["start"])) {
-	$start_date = htmlspecialchars($_GET["start"]);
-}
-if (isset($_GET["end"])) {
-	$end_date = htmlspecialchars($_GET["end"]);
-}
+$start_date = request_var("start", "2018-01-01");
+$end_date = request_var("end", "2018-12-31");
 
 if (is_null($start_date) || is_null($end_date)) {
 	die("Must supply both start and end as query parameters.");
