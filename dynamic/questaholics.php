@@ -25,44 +25,44 @@ require_once($phpbb_root_path . 'common.' . $phpEx);
 require_once($phpbb_root_path . 'includes/functions_user.' . $phpEx);
 
 
-if ($user->data['user_id'] == ANONYMOUS) {
+if ($user->data['user_id'] == ANONYMOUS) { // check if logged in
 	http_response_code(404);
 	die();
-} elseif (!group_memberships(23, $user->data['user_id'], true)) {
+} elseif (!group_memberships(23, $user->data['user_id'], true)) { // check if member of editors
 	http_response_code(403);
 	die();
 }
 
 $skill_icons = array(
-	"XP" => "http://i.imgur.com/e9Scoyr.png?1",
-	"Attack" => "http://i.imgur.com/aIlGWj7.png?1",
-	"Defence" => "http://i.imgur.com/BSHMZ9g.png?1",
-	"Strength" => "http://i.imgur.com/TN11iB0.png?1",
-	"Ranged" => "http://i.imgur.com/aolcwkI.png?1",
-	"Prayer" => "http://i.imgur.com/5RAnYE2.png?1",
-	"Magic" => "http://i.imgur.com/GKezxqd.png?1",
-	"Constitution" => "http://i.imgur.com/yINgxxN.png?1",
-	"Crafting" => "http://i.imgur.com/9k68VwV.png?1",
-	"Mining" => "http://i.imgur.com/OrDE0F3.png?1",
-	"Smithing" => "http://i.imgur.com/NxQRKjB.png?1",
-	"Fishing" => "http://i.imgur.com/vnZN6Ko.png?1",
-	"Cooking" => "http://i.imgur.com/1ZcM1R0.png?1",
-	"Firemaking" => "http://i.imgur.com/1VRk0f9.png?1",
-	"Runecrafting" => "http://i.imgur.com/g9C9BPh.png?1",
-	"Dungeoneering" => "http://i.imgur.com/jzCOwwo.png?1",
-	"Woodcutting" => "http://i.imgur.com/J5NPmLq.png?1",
-	"Agility" => "http://i.imgur.com/XZokISx.png?1",
-	"Herblore" => "http://i.imgur.com/txuk5P8.png?1",
-	"Thieving" => "http://i.imgur.com/qM4olc0.png?1",
-	"Fletching" => "http://i.imgur.com/wi6HiAQ.png?1",
-	"Slayer" => "http://i.imgur.com/qbpB9iZ.png?1",
-	"Farming" => "http://i.imgur.com/prlVhyF.png?1",
-	"Construction" => "http://i.imgur.com/bhbOQBu.png?1",
-	"Hunter" => "http://i.imgur.com/ZHMDypr.png?1",
-	"Summoning" => "http://i.imgur.com/3DWpUNG.png?1",
-	"Divination" => "http://i.imgur.com/aTRaKhA.png?1",
-	"Invention" => "http://i.imgur.com/1FA9141.png?1",
-	"Archaeology" => "https://clanquest.org/wiki/images/1/12/Archicon.jpg",
+	"XP" => "https://clanquest.org/images/skill_icons/overall.png",
+	"Attack" => "https://clanquest.org/images/skill_icons/attack.png",
+	"Defence" => "https://clanquest.org/images/skill_icons/defence.png",
+	"Strength" => "https://clanquest.org/images/skill_icons/strength.png",
+	"Ranged" => "https://clanquest.org/images/skill_icons/ranged.png",
+	"Prayer" => "https://clanquest.org/images/skill_icons/prayer.png",
+	"Magic" => "https://clanquest.org/images/skill_icons/magic.png",
+	"Constitution" => "https://clanquest.org/images/skill_icons/constitution.png",
+	"Crafting" => "https://clanquest.org/images/skill_icons/crafting.png",
+	"Mining" => "https://clanquest.org/images/skill_icons/mining.png",
+	"Smithing" => "https://clanquest.org/images/skill_icons/smithing.png",
+	"Fishing" => "https://clanquest.org/images/skill_icons/fishing.png",
+	"Cooking" => "https://clanquest.org/images/skill_icons/cooking.png",
+	"Firemaking" => "https://clanquest.org/images/skill_icons/firemaking.png",
+	"Runecrafting" => "https://clanquest.org/images/skill_icons/runecrafting.png",
+	"Dungeoneering" => "https://clanquest.org/images/skill_icons/dungeoneering.png",
+	"Woodcutting" => "https://clanquest.org/images/skill_icons/woodcutting.png",
+	"Agility" => "https://clanquest.org/images/skill_icons/agility.png",
+	"Herblore" => "https://clanquest.org/images/skill_icons/herblore.png",
+	"Thieving" => "https://clanquest.org/images/skill_icons/thieving.png",
+	"Fletching" => "https://clanquest.org/images/skill_icons/fletching.png",
+	"Slayer" => "https://clanquest.org/images/skill_icons/slayer.png",
+	"Farming" => "https://clanquest.org/images/skill_icons/farming.png",
+	"Construction" => "https://clanquest.org/images/skill_icons/construction.png",
+	"Hunter" => "https://clanquest.org/images/skill_icons/hunter.png",
+	"Summoning" => "https://clanquest.org/images/skill_icons/summoning.png",
+	"Divination" => "https://clanquest.org/images/skill_icons/divination.png",
+	"Invention" => "https://clanquest.org/images/skill_icons/invention.png",
+	"Archaeology" => "https://clanquest.org/images/skill_icons/archaeology.png",
 );
 
 $colors = array(
