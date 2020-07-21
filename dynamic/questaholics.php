@@ -144,7 +144,7 @@ foreach($cheevs as $level => $skills) {
 	foreach($skills as $skill => $users) {
 		$color = $colors[$idx%count($colors)];
 		$idx++;
-		echo "$level [img]". join("[/img][img]", get_icons_for_skill($skill, $skill_icons)) ."[/img]:[color=#$color]" . join(", ", $users) . "[/color]<br>";
+		echo "$level [img]". join("[/img][img]", get_icons_for_skill($skill, $skill_icons)) ."[/img]:[color=#$color]" . join(", ", $users) . "[/color]\n";
 
 		if($idx === (int)ceil(count($skills)/2)) {
 			echo "[/column][column]";
