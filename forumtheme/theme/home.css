@@ -94,7 +94,7 @@
 
 .home-content ul.event-list li {
 	font-size: 15px;
-	line-height: 1.5;
+	line-height: 1.6;
 	margin-bottom: 8px;
 }
 
@@ -108,12 +108,12 @@
 	width: 200px;
 	flex: 0 1 200px;
 	font-size: 15px;
-	line-height: 1.5;
+	line-height: 1.6;
 }
 .home-content .side-widgets {
 	width: 350px;
 	flex: 0 0 350px;
-	line-height: 1.5;
+	line-height: 1.6;
 	margin: 0 8px;
 	height: 675px;
 }
@@ -131,6 +131,7 @@
 }
 .main-content ul {
 	margin-left: 1.5em;
+	line-height: 1.6em;
 }
 .home-brochure {
 	font-size: 1.3em;

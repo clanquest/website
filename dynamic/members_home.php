@@ -1,12 +1,12 @@
 <div class="home-content">
 	<div class="main-content">
 	<?php
+	// handle phpbb permissions
 	$phpbb_content_visibility = $phpbb_container->get('content.visibility');
-
 	$ex_fid_ary = array_unique(array_merge(array_keys($auth->acl_getf('!f_read', true)), array_keys($auth->acl_getf('!f_search', true))));
-
 	$not_in_fid = (count($ex_fid_ary)) ? 'WHERE ' . $db->sql_in_set('f.forum_id', $ex_fid_ary, true) . " OR (f.forum_password <> '' AND fa.user_id <> " . (int) $user->data['user_id'] . ')' : "";
 
+	// get forums we have access to
 	$sql = "SELECT f.forum_id, f.forum_name, f.parent_id, f.forum_type, f.right_id, f.forum_password, f.forum_flags, fa.user_id
 		FROM phpbb_forums f
 		LEFT JOIN  phpbb_forums_access fa ON (fa.forum_id = f.forum_id
@@ -30,26 +30,37 @@
 	$m_approve_posts_fid_sql = $phpbb_content_visibility->get_global_visibility_sql('post', $ex_fid_ary, 'p.');
 	$m_approve_topics_fid_sql = $phpbb_content_visibility->get_global_visibility_sql('topic', $ex_fid_ary, 't.');
 
-	// get unread posts
+	// get unread post ids
 	$sql_where = 'AND t.topic_moved_id = 0
 					AND ' . $m_approve_topics_fid_sql . '
 					' . ((count($ex_fid_ary)) ? 'AND ' . $db->sql_in_set('t.forum_id', $ex_fid_ary, true) : '');
 
 	$unread_ids = get_unread_topics($user->data['user_id'], $sql_where);
-	$unread_posts = [];
 
+	// set up priority forums, then where we post the most
+	$priority_forums = [30, 32, 46, 59, 91, 92, 98, 108, 109, 114, 115];
+	$sql = 'SELECT COUNT(post_id) AS post_count_in_forum, forum_id 
+		FROM phpbb_posts 
+		WHERE poster_id = ' . $db->sql_escape($user->data['user_id']) . ' 
+		GROUP BY forum_id ORDER BY post_count_in_forum DESC LIMIT 5';
+	$result = $db->sql_query($sql);
+	while ($row = $db->sql_fetchrow($result))
+		$priority_forums[] = $row['forum_id'];
+	
+	$unread_posts = [];
+	$priority_posts = [];
 	if (count($unread_ids) > 0) { // if we have unread post ids, gather their post data
-		$sql = 'SELECT t.topic_id, t.forum_id, t.topic_title, t.topic_last_post_time, t.topic_last_poster_name,
-			t.topic_last_poster_colour, t.topic_last_post_id
+		$sql = 'SELECT topic_id, forum_id, topic_title, topic_last_post_time, topic_last_poster_name,
+			topic_last_poster_colour, topic_last_post_id, topic_poster 
 				FROM phpbb_topics t
-				WHERE ' . $db->sql_in_set('t.topic_id', array_keys($unread_ids)) . ' ORDER BY t.topic_last_post_time DESC';
+				WHERE ' . $db->sql_in_set('topic_id', array_keys($unread_ids)) . ' ORDER BY topic_last_post_time DESC';
 		$result = $db->sql_query($sql);
 		while ($row = $db->sql_fetchrow($result))
 		{
 			// format our data
 			$datetime = new DateTime("now", new DateTimeZone($user->data['user_timezone']));
 			$datetime->setTimestamp($row['topic_last_post_time']);
-			$unread_posts[] = [
+			$forum_post = [
 				'topic_id' 				=> 	$row['topic_id'],
 				'forum_id' 				=> 	$row['forum_id'],
 				'topic_title' 			=> 	$row['topic_title'],
@@ -59,10 +70,19 @@
 				'last_post_id'			=> 	$row['topic_last_post_id'],
 				'datetime_formatted'	=> 	$datetime->format($user->data['user_dateformat'])
 			];
+
+			// if we started the topic or it's posted in a priority forum, bring it to the front
+			if ($row['topic_poster'] == $user->data['user_id'] || in_array($row['forum_id'], $priority_forums))
+				$priority_posts[] = $forum_post;
+			else // otherwise it's just a normal post
+				$unread_posts[] = $forum_post;
 		}
+
+		// merge the arrays of priority posts and regular unreads
+		$unread_posts = array_merge($priority_posts, $unread_posts);
 	}
 
-	if (count($unread_posts) > 0) {
+	if (count($unread_posts) > 0) { // do we have unreads to output?
 		$count = 0;
 		$display = 10;
 		echo '<h2>Unread Posts</h2>';
