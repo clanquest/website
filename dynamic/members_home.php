@@ -144,7 +144,6 @@
 
 		foreach($matches as $set)
 		{
-			//echo 'Match set: ' . $set[0] . ' ' . $set[1] . ' ' . $set[2] . '<br>';
 			if ($set[1] == '*')
 				$parsed_post = str_replace($set[0], '<em>' . $set[2] . '</em>', $parsed_post);
 			if ($set[1] == '**')
