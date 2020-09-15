@@ -47,6 +47,7 @@
 	padding: 8px 8px 8px 0;
 }
 .content { line-height: 1.6em; }
+ul.linklist > li { font-size: 1.2em; }
 .private-message .postbody { width: 74%; }
 .back2top {
 	position: absolute;
