@@ -125,10 +125,7 @@
 				echo '</ul>';
 
 			echo '<h3>' . $dmyDateFormatted . '</h3>';
-
-			// if we're not at the last item, start a new <ul>
-			if ($count != $news_item_count - 1)
-				echo '<ul>';
+			echo '<ul>';
 
 			$dmyDate = $dmyDateTemp;
 		}
@@ -166,6 +163,9 @@
 		echo '</li>';
 		$count++;
 	}
+
+	if ($count > 0)
+		echo '</ul>';
 	?>
 	</div>
 	<aside class="side-widgets cq-info-box">
