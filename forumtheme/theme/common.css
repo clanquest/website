@@ -186,6 +186,7 @@ body#wiki #page-body h2, .main-content h2 {
 	font-size: 1.6em;
 	font-variant: small-caps;
 	overflow: hidden; /* prevents the border from going behind info-boxes */
+	padding-bottom: 2px;
 }
 body#wiki #page-body h3 {
 	color: #FFD47D;
