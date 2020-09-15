@@ -188,12 +188,6 @@ body#wiki #page-body h2, .main-content h2 {
 	overflow: hidden; /* prevents the border from going behind info-boxes */
 	padding-bottom: 2px;
 }
-body#wiki #page-body h3 {
-	color: #FFD47D;
-	font-size: 1.4em;
-	font-variant: small-caps;
-	text-transform: none;
-}
 body#wiki #page-body h4 {
 	color: #FFD47D;
 	font-size: 1.3em;
