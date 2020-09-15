@@ -231,7 +231,7 @@ html, body {
 	.large-header .link .text { font-size: 0.8em; }
 }
 .header-banner {
-	background: url("./images/header2.png");
+	background: url("./images/header_2020.jpg");
 	background-position: center center;
 	background-size: cover;
 	box-shadow: inset 0 -8px 8px -8px rgba(0, 0, 0, 0.8);
@@ -240,7 +240,12 @@ html, body {
 }
 
 .header-banner-large {
-	height: 625px;
+	height: 350px;
+}
+@media all and (max-width: 450px) {
+	.header-banner-large {
+		height: 275px;
+	}
 }
 
 .header-banner-content {

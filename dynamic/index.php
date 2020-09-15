@@ -32,8 +32,12 @@ $user->setup();
 // set the homepage based on whether the user is logged in
 if ($user->data['user_id'] == ANONYMOUS)
 	$home_include = 'static/join_home.php';
-else
+else {
+	// include the phpbb text parser for members homepage
+	require $phpbb_root_path . 'includes/functions_posting.php';
+	require $phpbb_root_path . 'includes/functions_display.php';
 	$home_include = 'dynamic/members_home.php';
+}
 
 // template variables for main site
 $site_title = '';
