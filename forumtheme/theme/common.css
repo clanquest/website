@@ -231,7 +231,10 @@ body#wiki #page-body .column-container {
 	flex-wrap: wrap;
 }
 body#wiki #page-body .column-container .column { flex-grow: 1; }
-body#wiki .catlinks { margin-top: 1em; }
+body#wiki .catlinks { 
+	padding: 0.5em;
+	margin-top: 1em;
+}
 body#wiki .catlinks ul {
 	display: inline;
 	list-style: none;
