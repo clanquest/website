@@ -8,7 +8,7 @@
 	
 	<div id="our-guilds">
 		<div id="rs3">
-		<img src="/forums/styles/clanquest/images/join_brochure/rs3-text-banner.png" height="100" title="RuneScape 3" alt="RuneScape 3 Guild">
+		<a href="https://clanquest.org/wiki/Questing_Clan_of_RuneScape"><img src="/forums/styles/clanquest/images/join_brochure/rs3-text-banner.png" height="100" title="RuneScape 3" alt="RuneScape 3 Guild"></a>
 		<p>Since 2009 the "Quest Noobs" of Clan Quest have played RuneScape. Its members 
 		are frequently recognized by Jagex, have had many pieces of suggested content added 
 		in game and have had multiple Jagex employees in our community. Clan Quest unites 
@@ -16,7 +16,7 @@
 		</div>
 
 		<div id="os">
-		<img src="/forums/styles/clanquest/images/join_brochure/os-text-banner.png" height="100" title="Old School" alt="Old School Guild">
+		<a href="https://clanquest.org/wiki/Old_School_Clan_Quest"><img src="/forums/styles/clanquest/images/join_brochure/os-text-banner.png" height="100" title="Old School" alt="Old School Guild"></a>
 		<p>The Old School RuneScape (OSRS) Guild is composed of players who prefer a more classic 
 		Runescape experience. This Guild is for those questers who enjoy Dragon Slayer 2, Monkey Madness 2, 
 		and all the quests again in a 2007 style package. If you like the “original version” of RuneScape 
@@ -24,14 +24,14 @@
 		</div>
 
 		<div id="rl">
-		<img src="/forums/styles/clanquest/images/join_brochure/rl-text-banner.png" height="100" title="Rocket League" alt="Rocket League Guild">
+		<a href=https://clanquest.org/wiki/Rocket_League_Guild"><img src="/forums/styles/clanquest/images/join_brochure/rl-text-banner.png" height="100" title="Rocket League" alt="Rocket League Guild"></a>
 		<p>Members of our Rocket League Guild love playing soccer with their cars. Clan Quest isn’t all 
 		about lore, we love our fast paced games too! They play both casual and competitive and are always 
 		looking for new members. All we are going to say is, “GGOOOOAAAALLLLLL!!!”</p>
 		</div>
 
 		<div id="im">
-		<img src="/forums/styles/clanquest/images/join_brochure/im-text-banner.png" height="100" title="Ironman RuneScape 3" alt="Ironman RuneScape 3 Guild">
+		<a href="https://clanquest.org/wiki/RuneScape_Ironman_Guild"><img src="/forums/styles/clanquest/images/join_brochure/im-text-banner.png" height="100" title="Ironman RuneScape 3" alt="Ironman RuneScape 3 Guild"></a>
 		<p>Like Clan Quest? Like RuneScape? Are you an Ironman? Then the RuneScape 3 Ironman Guild is 
 		for you. The Guild is tailored specifically for players who play the Ironman mode including group 
 		PvM and Questing.</p>
