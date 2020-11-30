@@ -40,8 +40,8 @@ class ClanQuestWikiMarkup {
 
 	public static function renderTagSoundCloud($input, array $args, Parser $parser, PPFRame $frame) {
 		$output = $parser->recursiveTagParse($input, $frame);
-		$src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" . $output . " &color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true";
-		return "<iframe class=\"wiki-embed\" width=\"560\" height=\"166\" src=\"" . $src . " frameborder=\"0\" scrolling=\"no\" allow=\"autoplay\" ></iframe>\n";
+		$src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" . $output . "&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true";
+		return "<iframe class=\"wiki-embed\" width=\"560\" height=\"166\" src=\"" . $src . "\" frameborder=\"0\" scrolling=\"no\" allow=\"autoplay\" ></iframe>\n";
 	}
 
 	public static function renderTagTwitch($input, array $args, Parser $parser, PPFRame $frame) {
