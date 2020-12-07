@@ -104,6 +104,8 @@
 	?>
 	<h2>Clan News</h2>
 	<?php
+	include './includes/Parsedown.php';
+	$parsedown = new Parsedown();
 	$db->sql_query("SET character_set_results='utf8mb4'"); // set an appropriate charset for pulling emoji
 	$result = $db->sql_query('SELECT message, author, embed_href, timestamp FROM cq_announcements ORDER BY timestamp DESC LIMIT 10');
 	$dmyDate = 0;
@@ -129,32 +131,9 @@
 
 			$dmyDate = $dmyDateTemp;
 		}
-
-		// use the phpbb message parser to convert links and emojis
-		$bbcode_post = $news_item['message'];
-		$poll = $uid = $bitfield = $options = '';
-		generate_text_for_storage($bbcode_post, $uid, $bitfield, $options, true, true, true);
-		$parsed_post = generate_text_for_display($bbcode_post, $uid, $bitfield, $options);
-
-		// basic bold italic markdown conversion for _ and * formatting
-		preg_match_all('/([*_]+)((?:(?!\1).)+)\1/', $parsed_post, $matches, PREG_SET_ORDER);
-
-		foreach($matches as $set)
-		{
-			if ($set[1] == '*')
-				$parsed_post = str_replace($set[0], '<em>' . $set[2] . '</em>', $parsed_post);
-			if ($set[1] == '**')
-				$parsed_post = str_replace($set[0], '<strong>' . $set[2] . '</strong>', $parsed_post);
-			if ($set[1] == '***')
-				$parsed_post = str_replace($set[0], '<strong><em>' . $set[2] . '</em></strong>', $parsed_post);
-			
-			if ($set[1] == '___')
-				$parsed_post = str_replace($set[0], '<em><u>' . $set[2] . '</em></u>', $parsed_post);
-			if ($set[1] == '__')
-				$parsed_post = str_replace($set[0], '<u>' . $set[2] . '</u>', $parsed_post);
-			if ($set[1] == '_')
-				$parsed_post = str_replace($set[0], '<em>' . $set[2] . '</em>', $parsed_post);
-		}
+		
+		// parse the message with the Parsedown class
+		$parsed_post = $parsedown->line($news_item['message']);
 
 		echo '<li>';
 		echo $parsed_post;
