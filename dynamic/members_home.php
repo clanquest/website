@@ -106,6 +106,7 @@
 	<?php
 	include './includes/Parsedown.php';
 	$parsedown = new Parsedown();
+	$parsedown->setBreaksEnabled(true);
 	$db->sql_query("SET character_set_results='utf8mb4'"); // set an appropriate charset for pulling emoji
 	$result = $db->sql_query('SELECT message, author, embed_href, timestamp FROM cq_announcements ORDER BY timestamp DESC LIMIT 10');
 	$dmyDate = 0;
