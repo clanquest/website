@@ -205,6 +205,9 @@ body#wiki #page-body ul, body#wiki #page-body ol {
 body#wiki #page-body *:not(li) > ul { 
 	margin-bottom: 1.5em;
 }
+body#wiki .hlist ul {
+    margin: 1em 1.5em !important;
+}
 body#wiki fieldset {
 	margin: 1em 0 1em 0;
 	padding: 0 1em 1em;
@@ -253,6 +256,7 @@ body#wiki .catlinks ul {
 body#wiki .catlinks-allhidden {
 		display: none;
 }
+body#wiki .navbox-subgroup .navbox-group { vertical-align: middle impor !important; }
 body#wiki .search-types ul li {
 	list-style: none;
 	margin-right: 10px;
