@@ -50,7 +50,7 @@
 	$unread_posts = [];
 	$priority_posts = [];
 	if (count($unread_ids) > 0) { // if we have unread post ids, gather their post data
-		$sql = 'SELECT topic_id, forum_id, topic_title, topic_last_post_time, topic_last_poster_name,
+		$sql = 'SELECT topic_id, forum_id, topic_title, topic_last_post_time, topic_last_poster_name, topic_last_poster_id,
 			topic_last_poster_colour, topic_last_post_id, topic_poster 
 				FROM phpbb_topics t
 				WHERE ' . $db->sql_in_set('topic_id', array_keys($unread_ids)) . ' ORDER BY topic_last_post_time DESC';
@@ -66,6 +66,7 @@
 				'topic_title' 			=> 	$row['topic_title'],
 				'last_post_time' 		=> 	$row['topic_last_post_time'],
 				'last_poster'	 		=> 	$row['topic_last_poster_name'],
+				'last_poster_id'		=>	$row['topic_last_poster_id'],
 				'last_poster_colour' 	=> 	$row['topic_last_poster_colour'],
 				'last_post_id'			=> 	$row['topic_last_post_id'],
 				'datetime_formatted'	=> 	$datetime->format($user->data['user_dateformat'])
@@ -90,8 +91,8 @@
 		foreach ($unread_posts as $p) {
 			echo '<li><a href="/forums/viewtopic.php?f=' . $p['forum_id'] . '&t=' . $p['topic_id'] . '#p' . $p['last_post_id'].'">';
 			echo $p['topic_title'];
-			echo ' by ' . $p['last_poster'] . ' at ' . $p['datetime_formatted'];
-			echo '</a></li>';
+			echo '</a> by <a href="/forums/memberlist.php?mode=viewprofile&amp;u=' . $p['last_poster_id'] . '">' . $p['last_poster'] . '</a> at ' . $p['datetime_formatted'];
+			echo '</li>';
 
 			$count++;
 			if ($count >= $display)
@@ -101,6 +102,26 @@
 			echo '<li><a href="/forums/search.php?search_id=unreadposts">' . (count($unread_posts) - $display) . ' more unread posts, continue reading on the forums</a></li>';
 		echo '</ul>';
 	}
+	?>
+	<?php
+		$wiki_recent_changes_result = $db->sql_query('SELECT rc_timestamp, rc_user_text, rc_namespace, rc_title 
+			FROM wiki_recentchanges LEFT JOIN wiki_page ON rc_cur_id = page_id 
+			WHERE rc_namespace IN (0, 2) AND rc_type IN (0, 1) AND rc_this_oldid = page_latest ORDER BY rc_id DESC LIMIT 10');
+		$wiki_recent_changes = $db->sql_fetchrowset($wiki_recent_changes_result);
+		$datetime = new DateTime("now", new DateTimeZone($user->data['user_timezone']));
+		if (count($wiki_recent_changes) > 0)
+			echo '<h2>Recent Wiki Changes</h2><ul>';
+		foreach ($wiki_recent_changes as $change) {
+			$datetime->setTimestamp(strtotime($change['rc_timestamp']));
+			$wiki_uri = '/wiki/' . ($change['rc_namespace'] == 2 ? 'User:' : '') . $change['rc_title'];
+			$user_wiki_uri = '/wiki/User:' . str_replace(' ', '_', $change['rc_user_text']);
+			echo '<li><a href="' . $wiki_uri . '">';
+			echo $change['rc_namespace'] == 2 ? 'User:' : '';
+			echo str_replace('_', ' ', $change['rc_title']) . '</a> edited by <a href="' . $user_wiki_uri . '">'. $change['rc_user_text'] . '</a> at ' . $datetime->format($user->data['user_dateformat']);
+			echo '</li>';
+		}
+		if (count($wiki_recent_changes) > 0)
+			echo '</ul>';
 	?>
 	<h2>Clan News</h2>
 	<?php
