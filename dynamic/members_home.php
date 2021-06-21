@@ -50,7 +50,7 @@
 	$unread_posts = [];
 	$priority_posts = [];
 	if (count($unread_ids) > 0) { // if we have unread post ids, gather their post data
-		$sql = 'SELECT topic_id, forum_id, topic_title, topic_last_post_time, topic_last_poster_name,
+		$sql = 'SELECT topic_id, forum_id, topic_title, topic_last_post_time, topic_last_poster_name, topic_last_poster_id,
 			topic_last_poster_colour, topic_last_post_id, topic_poster 
 				FROM phpbb_topics t
 				WHERE ' . $db->sql_in_set('topic_id', array_keys($unread_ids)) . ' ORDER BY topic_last_post_time DESC';
@@ -66,6 +66,7 @@
 				'topic_title' 			=> 	$row['topic_title'],
 				'last_post_time' 		=> 	$row['topic_last_post_time'],
 				'last_poster'	 		=> 	$row['topic_last_poster_name'],
+				'last_poster_id'		=>	$row['topic_last_poster_id'],
 				'last_poster_colour' 	=> 	$row['topic_last_poster_colour'],
 				'last_post_id'			=> 	$row['topic_last_post_id'],
 				'datetime_formatted'	=> 	$datetime->format($user->data['user_dateformat'])
@@ -90,8 +91,8 @@
 		foreach ($unread_posts as $p) {
 			echo '<li><a href="/forums/viewtopic.php?f=' . $p['forum_id'] . '&t=' . $p['topic_id'] . '#p' . $p['last_post_id'].'">';
 			echo $p['topic_title'];
-			echo ' by ' . $p['last_poster'] . ' at ' . $p['datetime_formatted'];
-			echo '</a></li>';
+			echo '</a> by <a href="/forums/memberlist.php?mode=viewprofile&amp;u=' . $p['last_poster_id'] . '">' . $p['last_poster'] . '</a> at ' . $p['datetime_formatted'];
+			echo '</li>';
 
 			$count++;
 			if ($count >= $display)
