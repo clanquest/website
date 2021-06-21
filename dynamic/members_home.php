@@ -102,6 +102,26 @@
 		echo '</ul>';
 	}
 	?>
+	<?php
+		$wiki_recent_changes_result = $db->sql_query('SELECT rc_timestamp, rc_user_text, rc_namespace, rc_title 
+			FROM wiki_recentchanges LEFT JOIN wiki_page ON rc_cur_id = page_id 
+			WHERE rc_namespace IN (0, 2) AND rc_type IN (0, 1) AND rc_this_oldid = page_latest ORDER BY rc_id DESC LIMIT 10');
+		$wiki_recent_changes = $db->sql_fetchrowset($wiki_recent_changes_result);
+		$datetime = new DateTime("now", new DateTimeZone($user->data['user_timezone']));
+		if (count($wiki_recent_changes) > 0)
+			echo '<h2>Recent Wiki Changes</h2><ul>';
+		foreach ($wiki_recent_changes as $change) {
+			$datetime->setTimestamp(strtotime($change['rc_timestamp']));
+			$wiki_uri = '/wiki/' . ($change['rc_namespace'] == 2 ? 'User:' : '') . $change['rc_title'];
+			$user_wiki_uri = '/wiki/User:' . str_replace(' ', '_', $change['rc_user_text']);
+			echo '<li><a href="' . $wiki_uri . '">';
+			echo $change['rc_namespace'] == 2 ? 'User:' : '';
+			echo str_replace('_', ' ', $change['rc_title']) . '</a> edited by <a href="' . $user_wiki_uri . '">'. $change['rc_user_text'] . '</a> at ' . $datetime->format($user->data['user_dateformat']);
+			echo '</li>';
+		}
+		if (count($wiki_recent_changes) > 0)
+			echo '</ul>';
+	?>
 	<h2>Clan News</h2>
 	<?php
 	include './includes/Parsedown.php';
