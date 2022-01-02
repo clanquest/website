@@ -16,7 +16,7 @@ class ClanQuestWikiMarkup {
 		$parser->setHook('columns', 'ClanQuestWikiMarkup::renderTagColumns');
 		$parser->setHook('soundcloud', 'ClanQuestWikiMarkup::renderTagSoundCloud');
 		$parser->setHook('twitch', 'ClanQuestWikiMarkup::renderTagTwitch');
-		$parser->setHook('twitch-clip', 'ClanQuestWikiMarkup::renderTagTwitchClip');
+		$parser->setHook('twitchclip', 'ClanQuestWikiMarkup::renderTagTwitchClip');
 		$parser->setHook('vimeo', 'ClanQuestWikiMarkup::renderTagVimeo');
 		$parser->setHook('youtube', 'ClanQuestWikiMarkup::renderTagYoutube');
 	}
