@@ -16,6 +16,7 @@ class ClanQuestWikiMarkup {
 		$parser->setHook('columns', 'ClanQuestWikiMarkup::renderTagColumns');
 		$parser->setHook('soundcloud', 'ClanQuestWikiMarkup::renderTagSoundCloud');
 		$parser->setHook('twitch', 'ClanQuestWikiMarkup::renderTagTwitch');
+		$parser->setHook('twitch-clip', 'ClanQuestWikiMarkup::renderTagTwitchClip');
 		$parser->setHook('vimeo', 'ClanQuestWikiMarkup::renderTagVimeo');
 		$parser->setHook('youtube', 'ClanQuestWikiMarkup::renderTagYoutube');
 	}
@@ -47,6 +48,11 @@ class ClanQuestWikiMarkup {
 	public static function renderTagTwitch($input, array $args, Parser $parser, PPFRame $frame) {
 		$output = $parser->recursiveTagParse($input, $frame);
 		return "<iframe class=\"wiki-embed\" width=\"560\" height=\"315\" src=\"https://player.twitch.tv/?" . $output . "&parent=clanquest.org\" frameborder=\"0\" scrolling=\"no\" allowfullscreen></iframe>\n";
+	}
+
+	public static function renderTagTwitchClip($input, array $args, Parser $parser, PPFRame $frame) {
+		$output = $parser->recursiveTagParse($input, $frame);
+		return "<iframe class=\"wiki-embed\" width=\"560\" height=\"315\" src=\"https://clips.twitch.tv/embed/?clip=" . $output . "&parent=clanquest.org\" frameborder=\"0\" scrolling=\"no\" allowfullscreen></iframe>\n";
 	}
 
 	public static function renderTagYoutube($input, array $args, Parser $parser, PPFRame $frame) {
