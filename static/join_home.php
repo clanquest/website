@@ -24,7 +24,7 @@
 		</div>
 
 		<div id="chess">
-		<a href=https://clanquest.org/wiki/Chess_Guild"><img src="/forums/styles/clanquest/images/join_brochure/chess-icon.png" height="100" title="Chess" alt="Chess Guild"></a>
+		<a href="https://clanquest.org/wiki/Chess_Guild"><img src="/forums/styles/clanquest/images/join_brochure/chess-icon.png" height="100" title="Chess" alt="Chess Guild"></a>
 		<p>Beyond the realms of RuneScape, Clan Quest offers a hub for chess players of all levels. Whether you're a seasoned club 
 			player or a curious beginner, join us for friendly tournaments and discussions about all things chess. Come sharpen 
 			your skills and connect with fellow chess enthusiasts!</p>
