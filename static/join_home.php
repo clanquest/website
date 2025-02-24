@@ -8,7 +8,7 @@
 	
 	<div id="our-guilds">
 		<div id="rs3">
-		<a href="https://clanquest.org/wiki/Questing_Clan_of_RuneScape"><img src="/forums/styles/clanquest/images/join_brochure/rs3-text-banner.png" height="100" title="RuneScape 3" alt="RuneScape 3 Guild"></a>
+		<a href="https://clanquest.org/wiki/Questing_Clan_of_RuneScape"><img src="/forums/styles/clanquest/images/join_brochure/rs3-icon.png" height="100" title="RuneScape 3" alt="RuneScape 3 Guild"></a>
 		<p>Since 2009 the "Quest Noobs" of Clan Quest have played RuneScape. Its members 
 		are frequently recognized by Jagex, have had many pieces of suggested content added 
 		in game and have had multiple Jagex employees in our community. Clan Quest unites 
@@ -16,25 +16,18 @@
 		</div>
 
 		<div id="os">
-		<a href="https://clanquest.org/wiki/Old_School_Clan_Quest"><img src="/forums/styles/clanquest/images/join_brochure/os-text-banner.png" height="100" title="Old School" alt="Old School Guild"></a>
-		<p>The Old School RuneScape (OSRS) Guild is composed of players who prefer a more classic 
-		Runescape experience. This Guild is for those questers who enjoy Dragon Slayer 2, Monkey Madness 2, 
+		<a href="https://clanquest.org/wiki/Old_School_Clan_Quest"><img src="/forums/styles/clanquest/images/join_brochure/os-icon.png" height="100" title="Old School" alt="Old School Guild"></a>
+		<p>The Old School RuneScape (OSRS) Guild is composed of players who prefer RuneScape's 2007 style charm. 
+		This Guild is for those questers who enjoy Dragon Slayer 2, Monkey Madness 2, 
 		and all the quests again in a 2007 style package. If you like the “original version” of RuneScape 
 		check out the OSRS Guild, where its members are almost as opinionated as awesome.</p>
 		</div>
 
-		<div id="rl">
-		<a href=https://clanquest.org/wiki/Rocket_League_Guild"><img src="/forums/styles/clanquest/images/join_brochure/rl-text-banner.png" height="100" title="Rocket League" alt="Rocket League Guild"></a>
-		<p>Members of our Rocket League Guild love playing soccer with their cars. Clan Quest isn’t all 
-		about lore, we love our fast paced games too! They play both casual and competitive and are always 
-		looking for new members. All we are going to say is, “GGOOOOAAAALLLLLL!!!”</p>
-		</div>
-
-		<div id="im">
-		<a href="https://clanquest.org/wiki/RuneScape_Ironman_Guild"><img src="/forums/styles/clanquest/images/join_brochure/im-text-banner.png" height="100" title="Ironman RuneScape 3" alt="Ironman RuneScape 3 Guild"></a>
-		<p>Like Clan Quest? Like RuneScape? Are you an Ironman? Then the RuneScape 3 Ironman Guild is 
-		for you. The Guild is tailored specifically for players who play the Ironman mode including group 
-		PvM and Questing.</p>
+		<div id="chess">
+		<a href=https://clanquest.org/wiki/Chess_Guild"><img src="/forums/styles/clanquest/images/join_brochure/chess-icon.png" height="100" title="Chess" alt="Chess Guild"></a>
+		<p>Beyond the realms of RuneScape, Clan Quest offers a hub for chess players of all levels. Whether you're a seasoned club 
+			player or a curious beginner, join us for friendly tournaments and discussions about all things chess. Come sharpen 
+			your skills and connect with fellow chess enthusiasts!</p>
 		</div>
 	</div>
 	<h2>Our Meetups</h2>
@@ -59,7 +52,7 @@
 	interested in any of our guilds, then join Clan Quest today! We’re a laid back group who focuses 
 	on our community first and foremost. We invite anyone from novice to expert to join us for their next adventure.</p>
 
-	<p>The adventure continues... <a href="https://clanquest.org/forums/viewforum.php?f=2">Will you be our next member?</a></p>
+	<p>The adventure continues...<br><a href="https://apply.clanquest.org/rs3">Join RS3</a> | <a href="https://apply.clanquest.org/os">Join OSRS</a> | <a href="https://clanquest.org/forums/viewtopic.php?t=7608">Join Chess</a></p>
 
 	<img src="/forums/styles/clanquest/images/cq_shield.png" srcset="/forums/styles/clanquest/images/cq_shield_2x.png 2x" title="Clan Quest" alt="Clan Quest Shield Logo">
 

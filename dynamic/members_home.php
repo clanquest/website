@@ -176,7 +176,5 @@
 			frameborder="0"
 			scrolling="no"
 			class="google-calendar-embed"></iframe>
-		<h2>Social Media</h2>
-		<a class="twitter-timeline" data-width="350" data-height="400" data-theme="light" href="https://twitter.com/ClanQuest?ref_src=twsrc%5Etfw">&nbsp;</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</aside>
 </div>
