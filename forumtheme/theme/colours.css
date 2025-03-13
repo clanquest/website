@@ -127,13 +127,13 @@ li.row:hover dd {
 
 .boon, body#wiki .toc, body#wiki .wikitable, body#wiki .catlinks, 
 	body#wiki #preferences, body#wiki .mw-datatable, body#wiki .listfiles_nav, body#wiki .mw_metadata,
-	#filetoc {
+	#filetoc, body#wiki .showcase-box {
 	border: 1px solid #191919;
 	box-shadow: 0 0 0 4px #222, 0 0 0 5px #191919;
 }
 .boon .inner, body#wiki .toc, body#wiki .wikitable, body#wiki .catlinks, 
 	body#wiki #preferences, body#wiki .mw-datatable, body#wiki .listfiles_nav, body#wiki #page-body .box,
-	body#wiki .mw_metadata th, body#wiki .mw_metadata td {
+	body#wiki .mw_metadata th, body#wiki .mw_metadata td, body#wiki .showcase-box {
 	background: #191919;
 }
 #filetoc { 
@@ -390,6 +390,8 @@ body#wiki td.diff-context {
 body#wiki td.diff-deletedline .diffchange {
     background: #77580f;
 }
+/* wiki svg image buttons - make light for our dark theme */
+a.oo-ui-buttonElement-button { filter: invert(100%); }
 
 /* wiki modal dialog boxes */
 .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button, .oo-ui-messageDialog-message {

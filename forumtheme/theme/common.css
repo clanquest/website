@@ -319,6 +319,10 @@ body#wiki #page-body .oo-ui-menuSelectWidget {
 	background: #191919;
 }
 body#wiki #page-body .oo-ui-dropdownInputWidget-php { border: 1px solid #333 !important; }
+body#wiki .showcase-box {
+	display: flex;
+	margin-top:10px;
+}
 sup.reference {
 	vertical-align: super;
 	font-size: 80%;
